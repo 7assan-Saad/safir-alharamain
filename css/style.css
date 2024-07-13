@@ -406,11 +406,21 @@ p, .text-regular { font-family:'Shamel-thin' }
     height: calc(100vh - 80px) !important;
   }
   .carousel-inner .item-1 .ahmed-sherif-photo img {
-    width: 90%;
-    height: 92%;
+    width: 80%;
+    height: 90%;
+    min-width: 349px;
+    min-height: 376px;
+    max-width: 349px;
+    max-height: 376px;
   }
   .carousel-inner .item-1 .slogan {
     margin-top: 0 !important;
+  }
+  .carousel-inner .item-1 p, h2 {
+    margin-bottom: 5px !important;
+  }
+  .carousel-inner .item-1 p, h2 {
+    transform: scale(.9)
   }
 }
 
