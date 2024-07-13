@@ -879,6 +879,12 @@ p, .text-regular { font-family:'Shamel-thin' }
   margin-right: 0px;
 }
 
+@media (max-width: 576px ) {
+  .links ul {
+    margin-left: 0 !important;
+  }
+}
+
 .links > * a {
   display: block;
   width: max-content;
