@@ -1,5 +1,5 @@
 // get all data
-const url = '../model/data.json'
+const url = './model/data.json'
 const getData = async () => {
   let data = await fetch(url).then(response => response.json())
   return data
