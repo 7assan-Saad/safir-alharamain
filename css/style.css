@@ -879,6 +879,11 @@ p, .text-regular { font-family:'Shamel-thin' }
   margin-right: 0px;
 }
 
+.links > * a {
+  display: block;
+  width: max-content;
+}
+
 .links * a, .contact-section * a {
   transition: .2s all ease-in-out
 }
