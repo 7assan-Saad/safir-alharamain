@@ -29,13 +29,13 @@
     <div class="call mb-3 position-relative">
       <ul class="calls-company hidden">
         <li class="company-item mb-2">
-          <a href="tel:+201150337383" target="_blank" class="text-gold">اتصـــالات</a>
+          <a href="tel:+201150337383" target="_blank" class="text-secondary">اتصـــالات</a>
         </li>
         <li class="company-item mb-2">
-          <a href="tel:+201206858005" target="_blank" class="text-gold">أورانــــــــج</a>
+          <a href="tel:+201206858005" target="_blank" class="text-secondary">أورانــــــــج</a>
         </li>
         <li class="company-item">
-          <a href="tel:+201150337383" target="_blank" class="text-gold">فودافون</a>
+          <a href="tel:+201040558052" target="_blank" class="text-secondary">فودافون</a>
         </li>
       </ul>
     </div>
@@ -49,7 +49,7 @@
     <div class="container">
 
       <a class="navbar-brand logo ms-1 cursor-pointer" href="index.html">
-        <img src="./img/logo.png" alt="Safir Al Harameen logo">
+        <img src="./img/logo.svg" alt="Safir Al Harameen logo">
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -59,16 +59,16 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item pt-1">
+          <li class="nav-item pt-2">
             <a class="home nav-link cursor-pointer" aria-current="page" href="index.html">الرئيسية</a>
           </li>
-          <li class="nav-item pt-1">
+          <li class="nav-item pt-2">
             <a class="who-are-we nav-link max-content" aria-current="page" href="who-are-we.html">من نحن</a>
           </li>
 
-          <li class="nav-item pt-1 dropdown">
+          <li class="nav-item pt-2 dropdown">
             <span class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              خدماتنا
+              الخدمات
             </span>
             <ul class="dropdown-menu rounded-4 px-2">
               <li class="nav-item">
@@ -98,18 +98,18 @@
             </ul>
           </li>
 
-          <li class="nav-item pt-1">
+          <li class="nav-item pt-2">
             <a class="news nav-link max-content" aria-current="page" href="news.html">الأخبار والأحدث</a>
           </li>
-          <li class="nav-item pt-1">
+          <li class="nav-item pt-2">
             <a class="gallery nav-link" aria-current="page" href="gallery.html">المعرض</a>
           </li>
-          <li class="nav-item pt-1">
+          <li class="nav-item pt-2">
             <a class="questions nav-link max-content" aria-current="page" href="questions.html">الأسئلة الشائعة</a>
           </li>
 
-          <span class="contact-us text-white btn-gold rounded-4 px-5 max-content cursor-pointer"
-            style="padding-top: 12px; padding-bottom: 9px;" aria-current="page" onclick="scrollToDown()">
+          <span class="contact-us text-white btn-secondary rounded-5 px-5 max-content cursor-pointer"
+            style="padding-top: 14px; padding-bottom: 9px;" aria-current="page" onclick="scrollToDown()">
             تواصل معنا
           </span>
 
@@ -120,39 +120,57 @@
   </nav>
   <!--end navbar-->
 
-  <div class="umrah-head-page head-img position-relative overflow-hidden mb-5">
+  <header class="umrah-head-page head-img position-relative overflow-hidden mb-5">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="head-page-text d-flex align-items-center text-white text-center">
-            <div>
-              <h1 class="fs-1 mb-3 mt-3">أفضل أسعار برامج العمرة</h1>
-              <p class="fs-3">
-                وأفضل الخدمات من طيران وفنادق وباصات
-                <br>
-                في مكة المكرمة والمدينة المنورة
-              </p>
-              <p class="head-slogan fs-4 mb-0 mx-auto bg-black rounded-5 px-5 user-select-none"
-                style="padding-top: 15px; padding-bottom: 10px;">
-                اغتنم الفرصة واستمتع معنا بمناسك العمرة
-              </p>
-            </div>
+        <div
+          class="head-page-text d-flex align-items-center justify-content-center text-white text-center position-relative z-3">
+          <div>
+            <h1 class="fs-1 mb-3 mt-3">أفضل أسعار برامج العمرة</h1>
+            <p class="fs-3 lh-lg">
+              وأفضل الخدمات من طيران وفنادق وباصات
+              <br>
+              في مكة المكرمة والمدينة المنورة
+            </p>
+            <p class="head-slogan fs-4 mb-0 mx-auto bg-secondary rounded-5 px-5 user-select-none">
+              اغتنم الفرصة واستمتع معنا بمناسك العمرة
+            </p>
           </div>
-        </div>
-        <div class="col head-page-img-container">
-          <div class="head-page-img rounded-circle border border-white"></div>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
+  <!-- render all of umrah trips from umrah-trips.js file -->
+  <!--
   <section class="mb-5">
     <div class="container">
       <div class="umrah-trip row row-cols-1 row-cols-md-2 row-cols-lg-3">
-        <!-- render all of umrah trips from umrah-trips.js file -->
       </div>
     </div>
   </section>
+  -->
+
+  <div class="container">
+    <div class="coming-soon text-center text-white bg-secondary rounded-5 mx-auto mb-5" style="padding: 100px 40px;">
+      <h2 class="fs-1 lh-lg border border-1 border-white rounded-5 mx-auto pt-3"
+        style="min-width: 300px; max-width: 500px; background-color: rgba(255,255,255,.15);">
+        العمرة قربت جداً
+      </h2>
+      <p class="fs-4 lh-lg mt-4 mb-0">
+        منتظرين بيان العمرة من وزارة السياحة
+        <br>
+        بعد نزول البيان هنبدأ في إصدار التأشيرات في مصر
+        <br>
+        لا يوجد أي معلومة عن العمرة حالياً بناءً على عدم نزول البيان من الوزارة
+        <br>
+        لو عندك أي استفسار أو عاوز تخلص أوراقك
+        <br>
+        رجاء تواصل معنا على الواتس أب
+      </p>
+    </div>
+  </div>
+
 
   <!-- start join-us -->
   <section class="join-us section bg-light text-center">
@@ -161,7 +179,7 @@
       <p class="fs-4">أرسل رقم الواتس ليصلك آخر التحديثات والعروض الحصرية</p>
 
       <form action="" class="d-flex mx-auto whats-form">
-        <button type="button" class="send-btn btn btn-gold btn-lg rounded-4 me-2 px-5"
+        <button type="button" class="send-btn btn btn-secondary btn-lg rounded-4 me-2 px-5"
           style="padding-top: .75rem;">إرسال</button>
         <input type="text" class="whats-input form-control form-control-lg rounded-4" style="padding-top: .75rem;"
           placeholder="رقم الواتس">
@@ -178,7 +196,7 @@
 
           <div class="col col-12 col-md-12 col-lg-5 p-4">
             <div class="co-info">
-              <img src="./img/logo.png" class="mb-3" alt="Safir Al Harameen logo">
+              <img src="./img/logo.svg" class="logo mb-3" alt="Safir Al Harameen logo">
               <p class="text-gray lh-lg" style="max-width: 450px;">
                 "سفير المعتمرين" يتميز بخبرته الطويلة والمتميزة في تقديم خدمات متكاملة تشمل الإقامة، النقل، والمرافق
                 الشخصية، مما يسهم في توفير تجربة مميزة وخالية من القلق لكل من يسعى لأداء فريضة العمرة أو الحج.
@@ -187,7 +205,7 @@
 
             <ul class="social-media-links d-flex align-items-center">
 
-              <a href="https://www.facebook.com/profile.php?id=61561398382976&mibextid=ZbWKwL" target="_blank"
+              <a href="https://www.facebook.com/safiralharamain/" target="_blank"
                 class="social rounded-circle d-flex align-items-center justify-content-center">
                 <img src="./img/icons/facebook.png" alt="facebook icon">
               </a>
@@ -223,7 +241,7 @@
 
           <div class="col col-12 col-md-4 col-lg-2 p-4">
             <div class="links">
-              <h5 class="max-content text-gold" style="margin-bottom: 35px;">روابط هامة</h5>
+              <h5 class="max-content text-secondary" style="margin-bottom: 35px;">روابط هامة</h5>
               <ul class="text-regular text-gray max-content me-4">
                 <li>
                   <a href="" class="text-gray">الشروط والأحكام</a>
@@ -244,7 +262,7 @@
           <div class="col col-12 col-md-8 col-lg-5 p-4">
             <div class="contact-section">
               <div class="contact">
-                <h5 class="text-gold mb-4">تواصل معنا</h5>
+                <h5 class="text-secondary mb-4">تواصل معنا</h5>
 
                 <ul class="text-regular text-gray">
 
@@ -252,10 +270,11 @@
                     <div class="contact-icon rounded-circle d-flex align-items-center justify-content-center">
                       <img src="./img/icons/phone.png" alt="phone icon">
                     </div>
-                    <div class="fs-5 text-gray m-0 mt-2 ms-3">
-                      <a href="tel:+201150337383" target="_blank" class="text-gray">01150337383</a>
-                      <span>-</span>
+                    <div class="fs-4 text-gray m-0 mt-2 ms-3 d-flex flex-column">
+                      <a href="tel:+201150337383" target="_blank" class="text-gray"
+                        style="letter-spacing: 1.15px">01150337383</a>
                       <a href="tel:+201206858005" target="_blank" class="text-gray">01206858005</a>
+                      <a href="tel:+201040558052" target="_blank" class="text-gray">01040558052</a>
                     </div>
                   </li>
 
@@ -263,8 +282,8 @@
                     <div class="contact-icon rounded-circle d-flex align-items-center justify-content-center">
                       <img src="./img/icons/whats.png" alt="whats icon">
                     </div>
-                    <a href="http://wa.me/+201150337383" target="_blank"
-                      class="fs-5 text-gray m-0 mt-2 ms-3">01150337383</a>
+                    <a href="http://wa.me/+201150337383" target="_blank" class="fs-4 text-gray m-0 mt-2 ms-3"
+                      style="letter-spacing: 1.15px">01150337383</a>
                   </li>
 
                   <li class="list-unstyled d-flex align-items-center">
@@ -289,7 +308,7 @@
 
               </div>
               <div class="payment">
-                <h5 class="text-gold mt-5 mb-4">وسائل الدفع</h5>
+                <h5 class="text-secondary mt-5 mb-4">وسائل الدفع</h5>
                 <ul class="d-flex align-items-center">
                   <li><img src="./img/icons/cash.png" alt="cash"></li>
                   <li><img src="./img/icons/vf-cash.png" alt="vf-cash"></li>
@@ -306,7 +325,7 @@
     </div>
   </footer>
 
-  <div class="copyrights d-flex align-items-center justify-content-center text-light text-regular py-4 bg-black">
+  <div class="copyrights d-flex align-items-center justify-content-center text-light text-regular py-4 bg-primary">
     <p class="me-1 mb-0">جميع الحقوق محفوظة لشركة سفير الحرمين</p>
     <p class="mb-0" style="font-family: 'arial';">&copy; 2024</p>
   </div>
@@ -321,14 +340,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-  <script src="./js/umrah-trips.js" defer></script>
+  <!-- <script src="./js/umrah-trips.js" defer></script> -->
+  <script src="./js/goToDetails.js" defer></script>
   <script src="./js/loading-page.js"></script>
   <script src="./js/active-nav-link.js"></script>
   <script src="./js/open-close-nav.js"></script>
   <script src="./js/call-us.js"></script>
   <script src="./js/scroll-up.js"></script>
   <script src="./js/send-to-whatsapp.js"></script>
-  <script src="./js/goToDetails.js" defer></script>
   <script>
     function scrollToUp() { scrollTo(0, 0) }
     function scrollToDown() { scrollTo(0, document.body.offsetHeight) }

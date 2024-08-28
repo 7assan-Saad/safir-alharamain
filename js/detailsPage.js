@@ -3,13 +3,11 @@ let tripDetail = JSON.parse(localStorage.getItem('tripDetail'))
 
 const detailsContainer = document.querySelector('.details-container')
 
-// umrah
-// insideTrip
-// details umrah & hajj
+// umrah & hajj details
 
 if (tripDetail.category == 'umrah') {
   detailsContainer.innerHTML = /*html*/`
-    <h1 class="fs-2 text-center mt-4 mb-0">${tripDetail.tripTitle}</h1>
+    <h1 class="fs-2 text-center mb-0" style="margin-top: 11rem;">${tripDetail.tripTitle}</h1>
 
     <!-- start swiper -->
     <div class="details-carousel swiper">
@@ -126,7 +124,7 @@ if (tripDetail.category == 'umrah') {
       </ul>
     </div>
 
-    <div class="notes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
+    <div class="trip-notes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
       <h3 class="fs-5">ملاحظات:</h3>
       <ul class="mt-3">
           ${
@@ -148,27 +146,16 @@ if (tripDetail.category == 'umrah') {
         <li class="pro-item">يلزم مرافق للأطفال (الذكور) تحت ١٨ سنة.</li>
       </ul>
       <p class="mt-5">*تطبق الشروط والأحكام.</p>
-      <p class="mt-3 text-bold text-gold">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>
+      <p class="mt-3 text-bold text-secondary">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>
     </div>
   `
 }
 
-
-function renderImgs() {
-  for (let i = 0; i < tripDetail.imgs.length; i++) {
-    return /*html*/`
-    <div class="swiper-slide mx-auto w-100">
-      <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
-        <img class="w-100" src="./img/${tripDetail.imgs[i]}" alt="">
-      </div>
-    </div>
-    `
-  }
-}
+// inside trip details
 
 if (tripDetail.category == 'insideTrip') {
   detailsContainer.innerHTML = /*html*/`
-      <h1 class="fs-2 text-center mt-5 mb-0">رحلة ${tripDetail.tripTitle}</h1>
+      <h1 class="fs-2 text-center mb-0" style="margin-top: 11rem;">رحلة ${tripDetail.tripTitle}</h1>
       <!-- start swiper -->
       <div class="details-carousel swiper">
         <div class="slider-wrapper">
@@ -243,7 +230,7 @@ if (tripDetail.category == 'insideTrip') {
       </ul>
     </div>
 
-    <div class="notes mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
+    <div class="trip-notes mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
       <h3 class="fs-5">ملاحظات:</h3>
       <ul class="mt-3">
           ${
@@ -252,7 +239,19 @@ if (tripDetail.category == 'insideTrip') {
             }).join('')
           }
       </ul>
-      <p class="my-4 text-bold text-gold">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>  
+      <p class="my-4 text-bold text-secondary">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>  
     </div>
   `
+}
+
+function renderImgs() {
+  for (let i = 0; i < tripDetail.imgs.length; i++) {
+    return /*html*/`
+    <div class="swiper-slide mx-auto w-100">
+      <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
+        <img class="w-100" src="./img/${tripDetail.imgs[i]}" alt="">
+      </div>
+    </div>
+    `
+  }
 }

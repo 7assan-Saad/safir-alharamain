@@ -5,7 +5,7 @@ const getData = async () => {
   return data
 }
 
-// umrah trips all
+// all inside trips
 const travelTripsContainer = document.querySelector('.travel-trip')
 const travelTrips = ( async () => {
   await getData().then(data => { 
@@ -23,9 +23,9 @@ const travelTrips = ( async () => {
               </div>
               <div class="card-body p-4">
                 <div class="overflow-hidden py-1 mb-1" style="height: 32px;">
-                  <h3 class="card-title max-content text-black fs-5">${product.tripTitle}</h3>
+                  <h3 class="card-title max-content text-primary fs-5">${product.tripTitle}</h3>
                 </div>
-                <div class="text-black d-flex align-items-center justify-content-start">
+                <div class="text-primary d-flex align-items-center justify-content-start">
                   <p class="fs-3 text-bold mb-0">${product.mainPrice}</p>
                   <span class="fs-6 text-regular d-block" style="margin-top: -5px; margin-right: 5px;">جنيه مصري</span>
                 </div>
@@ -34,7 +34,7 @@ const travelTrips = ( async () => {
                   ${product.description}
                   </p>
                 </div>
-                <a href="details.html" class="btn-gold d-block max-content text-regular rounded-4 mt-3 px-4"
+                <a href="details.html" class="btn-secondary d-block max-content text-regular rounded-4 mt-3 px-4"
                   style="padding-top: 14px; padding-bottom: 10px;">
                   لمزيد من التفاصيل
                 </a>
