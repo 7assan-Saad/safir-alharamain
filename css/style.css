@@ -1223,6 +1223,7 @@ input, select {
 
 table > * td:first-child {
   font-family: 'Shamel-thin';
+  min-width: 125px;
 }
 
 .table .table-row {
@@ -1439,7 +1440,7 @@ table > * td:first-child {
     padding-left: 20px !important;
   }
   .fs-4, .fs-5 {
-    font-size: 1.2rem !important
+    font-size: 1rem !important
   }
 }
 
