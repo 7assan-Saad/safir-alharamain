@@ -989,7 +989,7 @@ input, select {
 
 .links > * a {
   display: block;
-  width: max-content;
+  min-width: max-content;
 }
 
 .links * a, .contact-section * a {
