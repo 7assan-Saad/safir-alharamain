@@ -1,3 +1,14 @@
+// get all data
+const url = './model/data.json'
+const getData = async () => {
+  let data = await fetch(url).then(response => response.json())
+  return data
+}
+
+// Store 'data' on the local storage
+getData().then(data => { 
+  localStorage.setItem('allTrips', JSON.stringify(data))
+})
 
 let tripDetail = JSON.parse(localStorage.getItem('tripDetail'))
 
@@ -7,162 +18,26 @@ const detailsContainer = document.querySelector('.details-container')
 
 if (tripDetail.category == 'umrah') {
   detailsContainer.innerHTML = /*html*/`
-    <h1 class="fs-2 text-center mb-0" style="margin-top: 11rem;">${tripDetail.tripTitle}</h1>
+    <div class="container mx-auto px-3" style="max-width: 1000px;">
+      <h1 class="fs-2 text-center mb-0" style="margin-top: 10rem;">${tripDetail.tripTitle}</h1>
 
-    <!-- start swiper -->
-    <div class="details-carousel swiper">
-      <div class="slider-wrapper">
-        <div class="swiper-wrapper">
-
-            <!-- Slides Items -->
-            ${
-              tripDetail.imgs.map( img => {
-                return /*html*/`
-                  <div class="swiper-slide mx-auto w-100">
-                    <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
-                      <img class="w-100" src="./img/${img}" alt="kaaba">
-                    </div>
-                  </div>
-                `
-              }).join('')
-            }
-
-        </div>
-
-        <!-- pagination -->
-        <!-- <div class="swiper-pagination"></div> -->
-
-        <!-- navigation buttons -->
-        <!-- <div class="swiper-button-prev text-gray"></div>
-        <div class="swiper-button-next text-gray"></div> -->
-
-      </div>
-
-    </div>
-    <!-- end swiper -->
-
-    <div class="program-details mx-auto mt-5" style="max-width: 900px;">
-      <h3 class="fs-5 mb-3">تفاصيل البرنامج:</h3>
-      <table class="table table-striped table-bordered rounded-4 overflow-hidden mb-4">
-        <tbody>
-          <tr>
-            <td class="table-row">المستوى</td>
-            <td class="table-row">${tripDetail.level}</td>
-          </tr>
-          <tr>
-            <td class="table-row">مدة الرحلة</td>
-            <td class="table-row">${tripDetail.flightDuration}</td>
-          </tr>
-          <tr>
-            <td class="table-row">تاريخ الرحلة</td>
-            <td class="table-row">${tripDetail.tripDate}</td>
-          </tr>
-          <tr>
-            <td class="table-row">تاريخ العودة</td>
-            <td class="table-row">${tripDetail.returnDate}</td>
-          </tr>
-          <tr>
-            <td class="table-row">مسار الرحلة</td>
-            <td class="table-row">${tripDetail.itinerary}</td>
-          </tr>
-          <tr>
-            <td class="table-row">وسيلة السفر</td>
-            <td class="table-row">${tripDetail.meansTravel}</td>
-          </tr>
-          <tr>
-            <td class="table-row">شركة الطيران</td>
-            <td class="table-row">${tripDetail.airline}</td>
-          </tr>
-          <tr>
-            <td class="table-row">فندق مكة</td>
-            <td class="table-row">${tripDetail.MakaHotel}</td>
-          </tr>
-          <tr>
-            <td class="table-row">فندق المدينة</td>
-            <td class="table-row">${tripDetail.MadinaHotel}</td>
-          </tr>
-          <tr>
-            <td class="table-row">سعر الثنائي</td>
-            <td class="table-row">${tripDetail.binaryPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-          </tr>
-          <tr>
-            <td class="table-row">سعر الثلاثي</td>
-            <td class="table-row">${tripDetail.triplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-          </tr>
-          <tr>
-            <td class="table-row">سعر الرباعي</td>
-            <td class="table-row">${tripDetail.quadruplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-          </tr>
-          <tr>
-            <td class="table-row">سعر الرضيع</td>
-            <td class="table-row">${tripDetail.infantPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-          </tr>
-          <tr>
-            <td class="table-row">سعر الطفل</td>
-            <td class="table-row">${tripDetail.childPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="childs">
-        <p class="mb-2">
-          * الرضيع : من يوم إلى 2 سنة، والإقامة مع ذويهم بالغرفة بدون سرير إضافى.
-        </p>
-        <p class="mb-0">
-          * الطفل : من 2 سنة الى 12 سنة، والإقامة مع ذويهم بالغرفة بدون سرير إضافى وله مقعد في الأتوبيس.
-        </p>
-      </div>
-    </div>
-
-    <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
-      <h3 class="fs-5">البرنامج يشمل:</h3>
-      <ul class="mt-3">
-          ${
-            tripDetail.programIncludes.map( pro => {
-              return /*html*/`<li class="pro-item">${pro}</li>`
-            }).join('')
-          }
-      </ul>
-    </div>
-
-    <div class="trip-notes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
-      <h3 class="fs-5">ملاحظات:</h3>
-      <ul class="mt-3">
-          ${
-            tripDetail.notes.map( note => {
-              return /*html*/`<li class="pro-item">${note}</li>`
-            }).join('')
-          }
-      </ul>
-    </div>
-
-    <div class="required-doc mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
-      <h3 class="fs-5">الأوراق والمستندات المطلوبة:</h3>
-      <ul class="mt-3">
-        <li class="pro-item">جواز سفر صالح لمدة لا تقل عن عام على الأقل.</li>
-        <li class="pro-item">فشهادة صحية خاصة بالحج والعمرة.</li>
-        <li class="pro-item">عدد ( 3 ) صور شخصية خلفية بيضاء.</li>
-        <li class="pro-item">استخراج تصريح سفر لمن هم في سن التجنيد.</li>
-        <li class="pro-item">إيجاد محرم للنساء لمن هى أقل من ٤٥ سنة.</li>
-        <li class="pro-item">يلزم مرافق للأطفال (الذكور) تحت ١٨ سنة.</li>
-      </ul>
-      <p class="mt-5">*تطبق الشروط والأحكام.</p>
-      <p class="mt-3 text-bold text-secondary">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>
-    </div>
-  `
-}
-
-// inside trip details
-
-if (tripDetail.category == 'insideTrip') {
-  detailsContainer.innerHTML = /*html*/`
-      <h1 class="fs-2 text-center mb-0" style="margin-top: 11rem;">رحلة ${tripDetail.tripTitle}</h1>
       <!-- start swiper -->
       <div class="details-carousel swiper">
         <div class="slider-wrapper">
           <div class="swiper-wrapper">
 
               <!-- Slides Items -->
-              ${ renderImgs() }
+              ${
+                tripDetail.imgs.map( img => {
+                  return /*html*/`
+                    <div class="swiper-slide mx-auto w-100">
+                      <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
+                        <img class="w-100" src="./img/${img}" alt="kaaba">
+                      </div>
+                    </div>
+                  `
+                }).join('')
+              }
 
           </div>
 
@@ -177,72 +52,696 @@ if (tripDetail.category == 'insideTrip') {
 
       </div>
       <!-- end swiper -->
-      <p class="fs-6 text-center mt-3">${tripDetail.description}</p>
 
       <div class="program-details mx-auto mt-5" style="max-width: 900px;">
-      <h3 class="fs-5 mb-3">تفاصيل الرحلة:</h3>
-      <table class="table table-striped table-bordered rounded-4 overflow-hidden mb-4">
-        <tbody>
-          <tr>
-            <td class="table-row">اسم الرحلة</td>
-            <td class="table-row">${tripDetail.tripTitle}</td>
-          </tr>
-          <tr>
-            <td class="table-row">مدة الرحلة</td>
-            <td class="table-row">${tripDetail.flightDuration}</td>
-          </tr>
-          <tr>
-            <td class="table-row">تاريخ الرحلة</td>
-            <td class="table-row">${tripDetail.tripDate}</td>
-          </tr>
-          <tr>
-            <td class="table-row">تاريخ العودة</td>
-            <td class="table-row">${tripDetail.returnDate}</td>
-          </tr>
-          <tr>
-            <td class="table-row">مسار الرحلة</td>
-            <td class="table-row">${tripDetail.itinerary}</td>
-          </tr>
-          <tr>
-            <td class="table-row">وسيلة النقل</td>
-            <td class="table-row">${tripDetail.meansTravel}</td>
-          </tr>
-          <tr>
-            <td class="table-row">سعر الرحلة</td>
-            <td class="table-row">${tripDetail.mainPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-          </tr>
-          <tr>
-            <td class="table-row">سعر الطفل</td>
-            <td class="table-row">${tripDetail.childPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <h3 class="fs-5 mb-3">تفاصيل البرنامج:</h3>
+        <table class="table table-striped table-bordered rounded-4 overflow-hidden mb-4">
+          <tbody>
+            <tr>
+              <td class="table-row">المستوى</td>
+              <td class="table-row">${tripDetail.level}</td>
+            </tr>
+            <tr>
+              <td class="table-row">مدة الرحلة</td>
+              <td class="table-row">${tripDetail.flightDuration}</td>
+            </tr>
+            <tr>
+              <td class="table-row">تاريخ الرحلة</td>
+              <td class="table-row">${tripDetail.tripDate}</td>
+            </tr>
+            <tr>
+              <td class="table-row">تاريخ العودة</td>
+              <td class="table-row">${tripDetail.returnDate}</td>
+            </tr>
+            <tr>
+              <td class="table-row">مسار الرحلة</td>
+              <td class="table-row">${tripDetail.itinerary}</td>
+            </tr>
+            <tr>
+              <td class="table-row">وسيلة السفر</td>
+              <td class="table-row">${tripDetail.tripTransfer}</td>
+            </tr>
+            <tr>
+              <td class="table-row">شركة الطيران</td>
+              <td class="table-row">${tripDetail.airline}</td>
+            </tr>
+            <tr>
+              <td class="table-row">فندق مكة</td>
+              <td class="table-row">${tripDetail.MakaHotel}</td>
+            </tr>
+            ${
+              tripDetail.MadinaHotel != "" ? /*html*/`
+                  <tr>
+                    <td class="table-row">فندق المدينة</td>
+                    <td class="table-row">${tripDetail.MadinaHotel}</td>
+                  </tr>
+                ` : ''
+            }
+            ${
+              tripDetail.binaryPrice != "" ? /*html*/`
+                  <tr>
+                    <td class="table-row">سعر الثنائي</td>
+                    <td class="table-row">${tripDetail.binaryPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+                  </tr>
+                ` : ''
+            }
+            ${
+              tripDetail.triplePrice != "" ? /*html*/`
+                  <tr>
+                    <td class="table-row">سعر الثلاثي</td>
+                    <td class="table-row">${tripDetail.triplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+                  </tr>
+                ` : ''
+            }
+            <tr>
+              <td class="table-row">سعر الرباعي</td>
+              <td class="table-row">${tripDetail.quadruplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+            </tr>
+            ${
+              tripDetail.infantPrice != "" ? /*html*/`
+                  <tr>
+                    <td class="table-row">سعر الرضيع</td>
+                    <td class="table-row">${tripDetail.infantPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+                  </tr>
+                ` : ''
+            }
+            ${
+              tripDetail.childPrice != "" ? /*html*/`
+                  <tr>
+                    <td class="table-row">سعر الطفل</td>
+                    <td class="table-row">${tripDetail.childPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+                  </tr>
+                ` : ''
+            }
+            <tr>
+              <td class="table-row">شركة السياحة</td>
+              <td class="table-row">${tripDetail.company.companyName}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="childs">
+          <p class="lh-lg mb-2">
+            * الرضيع : من يوم إلى 2 سنة، والإقامة مع ذويهم بالغرفة بدون سرير إضافى.
+          </p>
+          <p class="lh-lg mb-0">
+            * الطفل : من 2 سنة الى 12 سنة، والإقامة مع ذويهم بالغرفة بدون سرير إضافى وله مقعد في الأتوبيس.
+          </p>
+        </div>
+      </div>
 
-    <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
-      <h3 class="fs-5">الرحلة تشمل:</h3>
-      <ul class="mt-3">
-          ${
-            tripDetail.programIncludes.map( pro => {
-              return /*html*/`<li class="pro-item">${pro}</li>`
-            }).join('')
-          }
-      </ul>
-    </div>
+      <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
+        <h3 class="fs-5">البرنامج يشمل:</h3>
+        <ul class="mt-3">
+            ${
+              tripDetail.programIncludes.map( pro => {
+                return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
+              }).join('')
+            }
+        </ul>
+      </div>
 
-    <div class="trip-notes mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
-      <h3 class="fs-5">ملاحظات:</h3>
-      <ul class="mt-3">
-          ${
-            tripDetail.notes.map( note => {
-              return /*html*/`<li class="pro-item">${note}</li>`
-            }).join('')
-          }
-      </ul>
-      <p class="my-4 text-bold text-secondary">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>  
+      <div class="trip-notes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
+        <h3 class="fs-5">ملاحظات:</h3>
+        <ul class="mt-3">
+            ${
+              tripDetail.notes.map( note => {
+                return /*html*/`<li class="pro-item lh-lg">${note}</li>`
+              }).join('')
+            }
+        </ul>
+      </div>
+
+      <div class="required-doc mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
+        <h3 class="fs-5">الأوراق والمستندات المطلوبة:</h3>
+        <ul class="mt-3">
+          <li class="pro-item lh-lg">جواز سفر صالح لمدة لا تقل عن عام على الأقل.</li>
+          <li class="pro-item lh-lg">شهادة صحية خاصة بالحج والعمرة.</li>
+          <li class="pro-item lh-lg">عدد ( 3 ) صور شخصية خلفية بيضاء.</li>
+          <li class="pro-item lh-lg">استخراج تصريح سفر لمن هم في سن التجنيد.</li>
+          <li class="pro-item lh-lg">إيجاد محرم للنساء لمن هى أقل من ٤٥ سنة.</li>
+          <li class="pro-item lh-lg">يلزم مرافق للأطفال (الذكور) تحت ١٨ سنة.</li>
+        </ul>
+        <p class="mt-5">*تطبق الشروط والأحكام.</p>
+        <p class="text-bold text-secondary lh-lg mt-3">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>
+      </div>
     </div>
+    
+    <!-- start booking form -->
+    <section class="section bg-secondary">
+      <div class="container">
+        <div class="booking-form bg-white rounded-5 shadow p-5 mx-auto" style="max-width: 900px;">
+          <h3 class="booking-title fs-1 text-center text-secondary mx-auto mt-2 mb-5">حجـز رحلـة عمـرة</h3>
+          <form class="text-regular" action="">
+
+            <div class="row mb-3">
+              <div class="col">
+                <label class="text-gray mb-1 mb-1" for="name">الاسم</label>
+                <input type="text" name="name" id="name" class="form-control form-control-lg rounded-4">
+              </div>
+              <div class="col">
+                <label class="text-gray mb-1" for="phone">الموبايل</label>
+                <input type="text" name="phone" id="phone" class="form-control form-control-lg rounded-4">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col">
+                <label class="text-gray mb-1 mb-1" for="address">العنوان</label>
+                <input type="text" name="address" id="address" class="form-control form-control-lg rounded-4">
+              </div>
+              <div class="col">
+                <label class="text-gray mb-1" for="governorate">المحافظة</label>
+                <input type="text" name="governorate" id="governorate" class="form-control form-control-lg rounded-4">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col">
+                <label class="text-gray mb-1" for="trip-name">الرحلـة</label>
+                <div class="dropdown">
+                  <button class="select text-start btn bg-white border rounded-4 w-100 dropdown-toggle" name="trip-name"
+                    id="trip-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    *حدد الرحلة
+                  </button>
+                  <ul class="dropdown-menu rounded-4">
+                    <li class="dropdown-item">عمرة ترانزيت</li>
+                    <li class="dropdown-item">رحلة عمرة المولد النبوي</li>
+                    <li class="dropdown-item">رحلة عمرة 4 نجــوم</li>
+                    <li class="dropdown-item">رحلة عمرة 5 نجــوم</li>
+                    <li class="dropdown-item">رحلة عمرة رجــب</li>
+                    <li class="dropdown-item">رحلة عمرة شعبـان</li>
+                    <li class="dropdown-item">رحلة عمرة رمضــان</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col">
+                <label class="text-gray mb-1 mb-1">تاريخ الرحلـة</label>
+                <div class="form-control form-control-lg rounded-4 ps-2 pb-0"
+                  style="min-height: 46px; padding-top: .35rem ;">
+                  <input type="text" class="day p-0 pt-2 border-0 text-center" placeholder="يوم" style="width: 35px;">
+                  <span class="d-inline-block text-gray fs-6 mt-1 user-select-none">/</span>
+                  <input type="text" class="month p-0 pt-2 border-0 text-center" placeholder="شهر" style="width: 35px;">
+                  <span class="d-inline-block text-gray fs-6 mt-1 user-select-none">/</span>
+                  <input type="text" class="year p-0 pt-2 border-0 text-center" style="width: 55px;">
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col">
+                <label class="text-gray mb-1" for="adults-count">عدد الأفراد (الكبار)</label>
+                <input type="text" name="adults-count" id="adults-count" class="form-control form-control-lg rounded-4">
+              </div>
+              <div class="col">
+                <label class="text-gray mb-1" for="children-count">عدد الأفراد (الصغار)</label>
+                <input type="text" name="children-count" id="children-count"
+                  class="form-control form-control-lg rounded-4">
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <span class="text-gray mb-3">نوع الغرفة</span>
+              <div class="d-flex">
+                <div class="form-check m-left">
+                  <input class="form-check-input" type="radio" name="room-type" id="four" checked>
+                  <label class="form-check-label mt-2px" for="four">
+                    رباعـي
+                  </label>
+                </div>
+                <div class="form-check m-left">
+                  <input class="form-check-input" type="radio" name="room-type" id="three">
+                  <label class="form-check-label mt-2px" for="three">
+                    ثلاثـي
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="room-type" id="two">
+                  <label class="form-check-label" for="two">
+                    ثنائــي
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <span class="text-gray mb-3">الوجبــات</span>
+              <div class="d-flex">
+                <div class="form-check m-left">
+                  <input class="form-check-input" type="radio" name="meals" id="meals-yes">
+                  <label class="form-check-label mt-2px" for="meals-yes">
+                    نعم
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="meals" id="meals-no" checked>
+                  <label class="form-check-label mt-2px" for="meals-no">
+                    لا
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <span class="text-gray mb-3">طريقة الدفع</span>
+              <div class="row row-cols-1 row-cols-md-2 row-cols-lg-auto ps-4">
+                <div class="col form-check me-lg-5 mb-3">
+                  <input class="form-check-input" type="radio" name="payment-method" id="payment-cash" checked>
+                  <label class="form-check-label mt-2px" for="payment-cash">
+                    كاش
+                  </label>
+                </div>
+                <div class="col form-check me-lg-5 mb-3">
+                  <input class="form-check-input" type="radio" name="payment-method" id="payment-wallet-cash">
+                  <label class="form-check-label mt-2px max-content" for="payment-wallet-cash">
+                    محفظة كاش
+                  </label>
+                </div>
+                <div class="col form-check me-lg-5 mb-3">
+                  <input class="form-check-input" type="radio" name="payment-method" id="payment-bank">
+                  <label class="form-check-label mt-2px max-content" for="payment-bank">
+                    تحويل بنكى
+                  </label>
+                </div>
+                <div class="col form-check mb-3">
+                  <input class="form-check-input" type="radio" name="payment-method" id="payment-visa">
+                  <label class="form-check-label mt-2px" for="payment-visa">
+                    فيزا
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4" style="margin-top: -1rem;">
+              <label class="form-label text-gray" for="msg">رسالــة / استفســار</label>
+              <textarea class="form-control rounded-4" id="msg" rows="5" style="padding: 1rem;"></textarea>
+            </div>
+
+            <div class="row">
+              <span class="text-gray mb-3">مين بلغك بالرحلة ؟</span>
+              <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 ps-4">
+                <div class="col form-check mb-3">
+                  <input class="form-check-input" type="radio" name="who-told-you" id="friend" checked>
+                  <label class="form-check-label mt-2px" for="friend">
+                    صديق رشحنا ليك
+                  </label>
+                </div>
+                <div class="col form-check mb-3">
+                  <input class="form-check-input" type="radio" name="who-told-you" id="by-facebook">
+                  <label class="form-check-label mt-2px" for="by-facebook">
+                    عن طريق الفيسبوك
+                  </label>
+                </div>
+                <div class="col form-check mb-3">
+                  <input class="form-check-input" type="radio" name="who-told-you" id="by-whats">
+                  <label class="form-check-label mt-2px max-content" for="by-whats">
+                    عن طريق الواتساب
+                  </label>
+                </div>
+                <div class="col form-check mb-3">
+                  <input class="form-check-input" type="radio" name="who-told-you" id="by-web">
+                  <label class="form-check-label mt-2px max-content" for="by-web">
+                    عن طريق الموقع
+                  </label>
+                </div>
+                <div class="col form-check">
+                  <input class="form-check-input" type="radio" name="who-told-you" id="former-client">
+                  <label class="form-check-label mt-2px max-content" for="former-client">
+                    عميل سابق
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5">
+              <button type="button" class="send btn btn-secondary btn-lg rounded-4 px-5 d-inline-flex align-items-center"
+                style="padding-top: .75rem; width: 200px;">
+                <span class="mx-2">إرسال</span>
+                <img src="./img/icons/send.svg" width="25px" alt="send-icon" style="margin-top: -4px;">
+              </button>
+              <button type="button" class="cencel btn btn-light btn-lg transition rounded-4 px-5 ms-3"
+                style="padding-top: .75rem; width: 200px;">
+                إلغاء
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- end booking form -->
+
   `
+    let bookFile = document.createElement('script');
+    bookFile.src = './js/umrah-booking.js';
+    document.head.appendChild(bookFile);
 }
+
+// inside trip details
+
+if (tripDetail.category == 'insideTrip') {
+  
+  detailsContainer.innerHTML = /*html*/`
+      <div class="container mx-auto px-3" style="max-width: 1000px;">
+
+        <h1 class="fs-2 text-center mb-0" style="margin-top: 10rem;">${tripDetail.tripTitle}</h1>
+        <!-- start swiper -->
+        <div class="details-carousel swiper">
+          <div class="slider-wrapper">
+            <div class="swiper-wrapper">
+
+                <!-- Slides Items -->
+                ${ renderImgs() }
+
+            </div>
+
+            <!-- pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+
+            <!-- navigation buttons -->
+            <!-- <div class="swiper-button-prev text-gray"></div>
+            <div class="swiper-button-next text-gray"></div> -->
+
+          </div>
+
+        </div>
+        <!-- end swiper -->
+        <p class="fs-6 text-center lh-lg mt-3">${tripDetail.description}</p>
+      
+
+        <div class="program-details mx-auto mt-5" style="max-width: 900px;">
+          <h3 class="fs-5 mb-3">تفاصيل الرحلة:</h3>
+          <table class="table table-striped table-bordered rounded-4 overflow-hidden mb-4">
+            <tbody>
+              <tr>
+                <td class="table-row">اسم الرحلة</td>
+                <td class="table-row">${tripDetail.tripTitle}</td>
+              </tr>
+              <tr>
+                <td class="table-row">مدة الرحلة</td>
+                <td class="table-row">${tripDetail.flightDuration}</td>
+              </tr>
+              <tr>
+                <td class="table-row">تاريخ الرحلة</td>
+                <td class="table-row">${tripDetail.tripDate}</td>
+              </tr>
+              ${
+                tripDetail.returnDate != "" ? /*html*/`
+                  <tr>
+                    <td class="table-row">تاريخ العودة</td>
+                    <td class="table-row">${tripDetail.returnDate}</td>
+                  </tr>
+                  ` : ''
+              }
+              <tr>
+                <td class="table-row">مسار الرحلة</td>
+                <td class="table-row">${tripDetail.itinerary}</td>
+              </tr>
+              ${
+                tripDetail.tripTransfer != "" ? /*html*/`
+                  <tr>
+                    <td class="table-row">وسيلة النقل</td>
+                    <td class="table-row">${tripDetail.tripTransfer}</td>
+                  </tr>
+                  ` : ''
+              }
+              <tr>
+                <td class="table-row">سعر الرحلة</td>
+                <td class="table-row">${tripDetail.tripPrice}<span class="ms-1 text-regular">جنيه</span></td>
+              </tr>
+              ${
+                tripDetail.childPrice != "" ? /*html*/`
+                  <tr>
+                    <td class="table-row">سعر الطفل</td>
+                    <td class="table-row">${tripDetail.childPrice}<span class="ms-1 text-regular">جنيه</span></td>
+                  </tr>
+                  ` : ''
+              }
+              <tr>
+                <td class="table-row">شركة السياحة</td>
+                <td class="table-row">${tripDetail.company.companyName}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
+          <h3 class="fs-5">مميزات الرحلة:</h3>
+          <ul class="mt-3">
+              ${
+                tripDetail.tripFeatures.map( pro => {
+                  return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
+                }).join('')
+              }
+          </ul>
+        </div>
+
+        ${
+          tripDetail.tripIncludes.length != 0 ? /*html*/`
+            <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
+              <h3 class="fs-5">الرحلة تشمل:</h3>
+              <ul class="mt-3">
+                  ${
+                    tripDetail.tripIncludes.map( pro => {
+                      return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
+                    }).join('')
+                  }
+              </ul>
+            </div>
+          ` : ''
+        }
+
+        <div class="trip-notes mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
+          ${
+            tripDetail.notes.length != 0 ? /*html*/`
+              <h3 class="fs-5">ملاحظات:</h3>
+              <ul class="mt-3">
+                  ${
+                    tripDetail.notes.map( note => {
+                      return /*html*/`<li class="pro-item lh-lg">${note}</li>`
+                    }).join('')
+                  }
+              </ul>
+            ` : ''
+          }
+          
+          <p class="text-bold text-secondary lh-lg my-4">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>  
+        </div>
+      </div>
+    
+      <!-- start booking form -->
+      <section class="section bg-secondary">
+        <div class="container">
+          <div class="booking-form bg-white rounded-5 shadow p-5 mx-auto" style="max-width: 900px;">
+            <h3 class="booking-title fs-1 text-center text-secondary mx-auto mt-2 mb-5">حجــز رحلـــة</h3>
+            <form class="text-regular" action="">
+
+              <div class="row mb-3">
+                <div class="col">
+                  <label class="text-gray mb-1 mb-1" for="name">الاسم</label>
+                  <input type="text" name="name" id="name" class="form-control form-control-lg rounded-4">
+                </div>
+                <div class="col">
+                  <label class="text-gray mb-1" for="phone">الموبايل</label>
+                  <input type="text" name="phone" id="phone" class="form-control form-control-lg rounded-4">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col">
+                  <label class="text-gray mb-1 mb-1" for="address">العنوان</label>
+                  <input type="text" name="address" id="address" class="form-control form-control-lg rounded-4">
+                </div>
+                <div class="col">
+                  <label class="text-gray mb-1" for="governorate">المحافظة</label>
+                  <input type="text" name="governorate" id="governorate" class="form-control form-control-lg rounded-4">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col">
+                  <label class="text-gray mb-1" for="trip-name">الرحلـة</label>
+                  <div class="dropdown">
+                    <button class="select text-start btn bg-white border rounded-4 w-100 dropdown-toggle" name="trip-name"
+                      id="trip-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      *حدد الرحلة
+                    </button>
+                    <ul class="dropdown-menu rounded-4">
+                      <li class="dropdown-item">رحلة القاهــرة</li>
+                      <li class="dropdown-item">رحلة الفيـــوم</li>
+                      <li class="dropdown-item">رحلة بورسعــيد</li>
+                      <li class="dropdown-item">رحلة سيــــوه</li>
+                      <li class="dropdown-item">رحلة أفريكانو بارك</li>
+                      <li class="dropdown-item">رحلة خان خديجــة</li>
+                      <li class="dropdown-item">رحلة اليخــت</li>
+                      <li class="dropdown-item">رحلة أليكس ووتر مارك</li>
+                      <li class="dropdown-item">رحلة السيــرك</li>
+                      <li class="dropdown-item">رحلة مطــروح ( اليوم الواحد )</li>
+                      <li class="dropdown-item">رحلة مطــروح ( أيـام )</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <label class="text-gray mb-1 mb-1">تاريخ السفر</label>
+                  <div class="form-control form-control-lg rounded-4 ps-2 pb-0"
+                    style="min-height: 46px; padding-top: .35rem ;">
+                    <input type="text" class="day p-0 pt-2 border-0 text-center" placeholder="يوم" style="width: 35px;">
+                    <span class="d-inline-block text-gray fs-6 mt-1 user-select-none">/</span>
+                    <input type="text" class="month p-0 pt-2 border-0 text-center" placeholder="شهر" style="width: 35px;">
+                    <span class="d-inline-block text-gray fs-6 mt-1 user-select-none">/</span>
+                    <input type="text" class="year p-0 pt-2 border-0 text-center" style="width: 55px;">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col">
+                  <label class="text-gray mb-1" for="adults-count">عدد الأفراد (الكبار)</label>
+                  <input type="text" name="adults-count" id="adults-count" class="form-control form-control-lg rounded-4">
+                </div>
+                <div class="col">
+                  <label class="text-gray mb-1" for="children-count">عدد الأفراد (الصغار)</label>
+                  <input type="text" name="children-count" id="children-count"
+                    class="form-control form-control-lg rounded-4">
+                </div>
+              </div>
+
+              <div class="row mb-4 circus-book-type hidden">
+                <span class="text-gray mb-3">نوع الحجز</span>
+                <div class="d-flex">
+                  <div class="form-check m-left">
+                    <input class="form-check-input" type="radio" name="book-type" id="normal" checked>
+                    <label class="form-check-label mt-2px" for="normal">
+                      عادى
+                    </label>
+                  </div>
+                  <div class="form-check m-left">
+                    <input class="form-check-input" type="radio" name="book-type" id="middle">
+                    <label class="form-check-label mt-2px" for="middle">
+                      متوسط
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="book-type" id="vib">
+                    <label class="form-check-label" for="vib" style="font-family: arial;">
+                      VIB
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <span class="text-gray mb-3">حجز مقعد بالباص</span>
+                <div class="d-flex">
+                  <div class="form-check m-left">
+                    <input class="form-check-input" type="radio" name="book-seat" id="seat-yes" checked>
+                    <label class="form-check-label mt-2px" for="seat-yes">
+                      نعم
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="book-seat" id="seat-no">
+                    <label class="form-check-label mt-2px" for="seat-no">
+                      لا
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <span class="text-gray mb-3">طريقة الدفع</span>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-auto ps-4">
+                  <div class="col form-check me-lg-5 mb-3">
+                    <input class="form-check-input" type="radio" name="payment-method" id="payment-cash" checked>
+                    <label class="form-check-label mt-2px" for="payment-cash">
+                      كاش
+                    </label>
+                  </div>
+                  <div class="col form-check me-lg-5 mb-3">
+                    <input class="form-check-input" type="radio" name="payment-method" id="payment-wallet-cash">
+                    <label class="form-check-label mt-2px max-content" for="payment-wallet-cash">
+                      محفظة كاش
+                    </label>
+                  </div>
+                  <div class="col form-check me-lg-5 mb-3">
+                    <input class="form-check-input" type="radio" name="payment-method" id="payment-bank">
+                    <label class="form-check-label mt-2px max-content" for="payment-bank">
+                      تحويل بنكى
+                    </label>
+                  </div>
+                  <div class="col form-check mb-3">
+                    <input class="form-check-input" type="radio" name="payment-method" id="payment-visa">
+                    <label class="form-check-label mt-2px" for="payment-visa">
+                      فيزا
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4" style="margin-top: -1rem;">
+                <label class="form-label text-gray" for="msg">رسالــة / استفســار</label>
+                <textarea class="form-control rounded-4" id="msg" rows="5" style="padding: 1rem;"></textarea>
+              </div>
+
+              <div class="row">
+                <span class="text-gray mb-3">مين بلغك بالرحلة ؟</span>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 ps-4">
+                  <div class="col form-check mb-3">
+                    <input class="form-check-input" type="radio" name="who-told-you" id="friend" checked>
+                    <label class="form-check-label mt-2px" for="friend">
+                      صديق رشحنا ليك
+                    </label>
+                  </div>
+                  <div class="col form-check mb-3">
+                    <input class="form-check-input" type="radio" name="who-told-you" id="by-facebook">
+                    <label class="form-check-label mt-2px" for="by-facebook">
+                      عن طريق الفيسبوك
+                    </label>
+                  </div>
+                  <div class="col form-check mb-3">
+                    <input class="form-check-input" type="radio" name="who-told-you" id="by-whats">
+                    <label class="form-check-label mt-2px max-content" for="by-whats">
+                      عن طريق الواتساب
+                    </label>
+                  </div>
+                  <div class="col form-check mb-3">
+                    <input class="form-check-input" type="radio" name="who-told-you" id="by-web">
+                    <label class="form-check-label mt-2px max-content" for="by-web">
+                      عن طريق الموقع
+                    </label>
+                  </div>
+                  <div class="col form-check">
+                    <input class="form-check-input" type="radio" name="who-told-you" id="former-client">
+                    <label class="form-check-label mt-2px max-content" for="former-client">
+                      عميل سابق
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5">
+                <button type="button" class="send btn btn-secondary btn-lg rounded-4 px-5 d-inline-flex align-items-center"
+                  style="padding-top: .75rem; width: 200px;">
+                  <span class="mx-2">إرسال</span>
+                  <img src="./img/icons/send.svg" width="25px" alt="send-icon" style="margin-top: -4px;">
+                </button>
+                <button type="button" class="cencel btn btn-light btn-lg transition rounded-4 px-5 ms-3"
+                  style="padding-top: .75rem; width: 200px;">
+                  إلغاء
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- end booking form -->
+  `
+  let bookFile = document.createElement('script');
+  bookFile.src = './js/travel-booking.js';
+  document.head.appendChild(bookFile);
+
+}
+
 
 function renderImgs() {
   for (let i = 0; i < tripDetail.imgs.length; i++) {

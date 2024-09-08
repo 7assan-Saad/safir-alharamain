@@ -1,9 +1,9 @@
-const swiper = new Swiper('.slider-wrapper', {
+const testimonialsSwiper = new Swiper('.testimonials-wrapper', {
   // Optional parameters
   // direction: 'vertical',
-  // autoplay: {
-  //   delay: 5000,
-  // },
+  autoplay: {
+    delay: 5000,
+  },
   loop: true,
   grabCursor: true,
   // spaceBetween: 40,
@@ -30,8 +30,57 @@ const swiper = new Swiper('.slider-wrapper', {
       slidesPerView: 2
     },
   }
-  // scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
+
+});
+
+const addsSwiper = new Swiper('.adds-wrapper', {
+  autoplay: {
+    delay: 5000,
+  },
+  loop: true,
+  grabCursor: true,
+  // spaceBetween: 10,
+
+  breakpoints: {
+    0: {
+      slidesPerView: 2
+    },
+    
+    1200: {
+      slidesPerView: 3
+    },
+    
+    1400: {
+      slidesPerView: 4
+    },
+  }
+
+});
+
+const coLogosSwiper = new Swiper('.co-logos-wrapper', {
+  autoplay: {
+    delay: 5000,
+  },
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 30,
+
+  breakpoints: {
+    0: {
+      slidesPerView: 2
+    },
+
+    576: {
+      slidesPerView: 3
+    },
+    
+    1200: {
+      slidesPerView: 4
+    },
+    
+    1400: {
+      slidesPerView: 5
+    },
+  }
+
 });

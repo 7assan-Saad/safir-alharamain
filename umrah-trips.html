@@ -99,7 +99,7 @@
           </li>
 
           <li class="nav-item pt-2">
-            <a class="news nav-link max-content" aria-current="page" href="news.html">الأخبار والأحدث</a>
+            <a class="news nav-link max-content" aria-current="page" href="news.html">المقالات | الأخبــار</a>
           </li>
           <li class="nav-item pt-2">
             <a class="gallery nav-link" aria-current="page" href="gallery.html">المعرض</a>
@@ -142,15 +142,15 @@
   </header>
 
   <!-- render all of umrah trips from umrah-trips.js file -->
-  <!--
+
   <section class="mb-5">
     <div class="container">
       <div class="umrah-trip row row-cols-1 row-cols-md-2 row-cols-lg-3">
       </div>
     </div>
   </section>
-  -->
 
+  <!--
   <div class="container">
     <div class="coming-soon text-center text-white bg-secondary rounded-5 mx-auto mb-5" style="padding: 100px 40px;">
       <h2 class="fs-1 lh-lg border border-1 border-white rounded-5 mx-auto pt-3"
@@ -170,7 +170,211 @@
       </p>
     </div>
   </div>
+  -->
 
+  <!-- start booking form -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <div class="booking-form bg-white rounded-5 shadow p-5 mx-auto" style="max-width: 900px;">
+        <h3 class="booking-title fs-1 text-center text-secondary mx-auto mt-2 mb-5">حجـز رحلـة عمـرة</h3>
+        <form class="text-regular" action="">
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="text-gray mb-1 mb-1" for="name">الاسم</label>
+              <input type="text" name="name" id="name" class="form-control form-control-lg rounded-4">
+            </div>
+            <div class="col">
+              <label class="text-gray mb-1" for="phone">الموبايل</label>
+              <input type="text" name="phone" id="phone" class="form-control form-control-lg rounded-4">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="text-gray mb-1 mb-1" for="address">العنوان</label>
+              <input type="text" name="address" id="address" class="form-control form-control-lg rounded-4">
+            </div>
+            <div class="col">
+              <label class="text-gray mb-1" for="governorate">المحافظة</label>
+              <input type="text" name="governorate" id="governorate" class="form-control form-control-lg rounded-4">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="text-gray mb-1" for="trip-name">الرحلـة</label>
+              <div class="dropdown">
+                <button class="select text-start btn bg-white border rounded-4 w-100 dropdown-toggle" name="trip-name"
+                  id="trip-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  *حدد الرحلة
+                </button>
+                <ul class="dropdown-menu rounded-4">
+                  <li class="dropdown-item">عمرة ترانزيت</li>
+                  <li class="dropdown-item">رحلة عمرة المولد النبوي</li>
+                  <li class="dropdown-item">رحلة عمرة 4 نجــوم</li>
+                  <li class="dropdown-item">رحلة عمرة 5 نجــوم</li>
+                  <li class="dropdown-item">رحلة عمرة رجــب</li>
+                  <li class="dropdown-item">رحلة عمرة شعبـان</li>
+                  <li class="dropdown-item">رحلة عمرة رمضــان</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col">
+              <label class="text-gray mb-1 mb-1">تاريخ الرحلـة</label>
+              <div class="form-control form-control-lg rounded-4 ps-2 pb-0"
+                style="min-height: 46px; padding-top: .35rem ;">
+                <input type="text" class="day p-0 pt-2 border-0 text-center" placeholder="يوم" style="width: 35px;">
+                <span class="d-inline-block text-gray fs-6 mt-1 user-select-none">/</span>
+                <input type="text" class="month p-0 pt-2 border-0 text-center" placeholder="شهر" style="width: 35px;">
+                <span class="d-inline-block text-gray fs-6 mt-1 user-select-none">/</span>
+                <input type="text" class="year p-0 pt-2 border-0 text-center" style="width: 55px;">
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col">
+              <label class="text-gray mb-1" for="adults-count">عدد الأفراد (الكبار)</label>
+              <input type="text" name="adults-count" id="adults-count" class="form-control form-control-lg rounded-4">
+            </div>
+            <div class="col">
+              <label class="text-gray mb-1" for="children-count">عدد الأفراد (الصغار)</label>
+              <input type="text" name="children-count" id="children-count"
+                class="form-control form-control-lg rounded-4">
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <span class="text-gray mb-3">نوع الغرفة</span>
+            <div class="d-flex">
+              <div class="form-check m-left">
+                <input class="form-check-input" type="radio" name="room-type" id="four" checked>
+                <label class="form-check-label mt-2px" for="four">
+                  رباعـي
+                </label>
+              </div>
+              <div class="form-check m-left">
+                <input class="form-check-input" type="radio" name="room-type" id="three">
+                <label class="form-check-label mt-2px" for="three">
+                  ثلاثـي
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="room-type" id="two">
+                <label class="form-check-label" for="two">
+                  ثنائــي
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <span class="text-gray mb-3">الوجبــات</span>
+            <div class="d-flex">
+              <div class="form-check m-left">
+                <input class="form-check-input" type="radio" name="meals" id="meals-yes">
+                <label class="form-check-label mt-2px" for="meals-yes">
+                  نعم
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="meals" id="meals-no" checked>
+                <label class="form-check-label mt-2px" for="meals-no">
+                  لا
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <span class="text-gray mb-3">طريقة الدفع</span>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-auto ps-4">
+              <div class="col form-check me-lg-5 mb-3">
+                <input class="form-check-input" type="radio" name="payment-method" id="payment-cash" checked>
+                <label class="form-check-label mt-2px" for="payment-cash">
+                  كاش
+                </label>
+              </div>
+              <div class="col form-check me-lg-5 mb-3">
+                <input class="form-check-input" type="radio" name="payment-method" id="payment-wallet-cash">
+                <label class="form-check-label mt-2px max-content" for="payment-wallet-cash">
+                  محفظة كاش
+                </label>
+              </div>
+              <div class="col form-check me-lg-5 mb-3">
+                <input class="form-check-input" type="radio" name="payment-method" id="payment-bank">
+                <label class="form-check-label mt-2px max-content" for="payment-bank">
+                  تحويل بنكى
+                </label>
+              </div>
+              <div class="col form-check mb-3">
+                <input class="form-check-input" type="radio" name="payment-method" id="payment-visa">
+                <label class="form-check-label mt-2px" for="payment-visa">
+                  فيزا
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4" style="margin-top: -1rem;">
+            <label class="form-label text-gray" for="msg">رسالــة / استفســار</label>
+            <textarea class="form-control rounded-4" id="msg" rows="5" style="padding: 1rem;"></textarea>
+          </div>
+
+          <div class="row">
+            <span class="text-gray mb-3">مين بلغك بالرحلة ؟</span>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 ps-4">
+              <div class="col form-check mb-3">
+                <input class="form-check-input" type="radio" name="who-told-you" id="friend" checked>
+                <label class="form-check-label mt-2px" for="friend">
+                  صديق رشحنا ليك
+                </label>
+              </div>
+              <div class="col form-check mb-3">
+                <input class="form-check-input" type="radio" name="who-told-you" id="by-facebook">
+                <label class="form-check-label mt-2px" for="by-facebook">
+                  عن طريق الفيسبوك
+                </label>
+              </div>
+              <div class="col form-check mb-3">
+                <input class="form-check-input" type="radio" name="who-told-you" id="by-whats">
+                <label class="form-check-label mt-2px max-content" for="by-whats">
+                  عن طريق الواتساب
+                </label>
+              </div>
+              <div class="col form-check mb-3">
+                <input class="form-check-input" type="radio" name="who-told-you" id="by-web">
+                <label class="form-check-label mt-2px max-content" for="by-web">
+                  عن طريق الموقع
+                </label>
+              </div>
+              <div class="col form-check">
+                <input class="form-check-input" type="radio" name="who-told-you" id="former-client">
+                <label class="form-check-label mt-2px max-content" for="former-client">
+                  عميل سابق
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <button type="button" class="send btn btn-secondary btn-lg rounded-4 px-5 d-inline-flex align-items-center"
+              style="padding-top: .75rem; width: 200px;">
+              <span class="mx-2">إرسال</span>
+              <img src="./img/icons/send.svg" width="25px" alt="send-icon" style="margin-top: -4px;">
+            </button>
+            <button type="button" class="cencel btn btn-light btn-lg transition rounded-4 px-5 ms-3"
+              style="padding-top: .75rem; width: 200px;">
+              إلغاء
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- end booking form -->
 
   <!-- start join-us -->
   <section class="join-us section bg-light text-center">
@@ -198,7 +402,7 @@
             <div class="co-info">
               <img src="./img/logo.svg" class="logo mb-3" alt="Safir Al Harameen logo">
               <p class="text-gray lh-lg" style="max-width: 450px;">
-                "سفير المعتمرين" يتميز بخبرته الطويلة والمتميزة في تقديم خدمات متكاملة تشمل الإقامة، النقل، والمرافق
+                "سفـير الحرمـين" يتميز بخبرته الطويلة والمتميزة في تقديم خدمات متكاملة تشمل الإقامة، النقل، والمرافق
                 الشخصية، مما يسهم في توفير تجربة مميزة وخالية من القلق لكل من يسعى لأداء فريضة العمرة أو الحج.
               </p>
             </div>
@@ -326,7 +530,7 @@
   </footer>
 
   <div class="copyrights d-flex align-items-center justify-content-center text-light text-regular py-4 bg-primary">
-    <p class="me-1 mb-0">جميع الحقوق محفوظة لشركة سفير الحرمين</p>
+    <p class="mt-1 me-1 mb-0">جميع الحقوق محفوظة | سفــير الحرمــين</p>
     <p class="mb-0" style="font-family: 'arial';">&copy; 2024</p>
   </div>
   <!-- start footer -->
@@ -340,14 +544,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-  <!-- <script src="./js/umrah-trips.js" defer></script> -->
+  <script src="./js/loading-page.js" defer></script>
+  <script src="./js/umrah-trips.js" defer></script>
+  <script src="./js/umrah-booking.js" defer></script>
   <script src="./js/goToDetails.js" defer></script>
-  <script src="./js/loading-page.js"></script>
-  <script src="./js/active-nav-link.js"></script>
-  <script src="./js/open-close-nav.js"></script>
-  <script src="./js/call-us.js"></script>
-  <script src="./js/scroll-up.js"></script>
-  <script src="./js/send-to-whatsapp.js"></script>
+  <script src="./js/active-nav-link.js" defer></script>
+  <script src="./js/open-close-nav.js" defer></script>
+  <script src="./js/call-us.js" defer></script>
+  <script src="./js/scroll-up.js" defer></script>
+  <script src="./js/send-to-whatsapp.js" defer></script>
   <script>
     function scrollToUp() { scrollTo(0, 0) }
     function scrollToDown() { scrollTo(0, document.body.offsetHeight) }

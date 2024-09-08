@@ -17,8 +17,13 @@ const umrahTrips = ( async () => {
         <div class="col p-4 card-link">
           <a href="details.html" onclick="getCatAndID(${product.id})">
             <div class="card rounded-5 overflow-hidden">
-              <div class="product-company">
+              <!-- <div class="product-company">
                 <img src="./img/${product.company.companyLogo}" alt="">
+              </div> -->
+              <div class="trip-date">
+                <span class="day fs-7 d-block">${product.tripDay}</span>
+                <span class="day-num d-block">${product.tripDayNum}</span>
+                <span class="month fs-7 d-block">${product.tripMonth}</span>
               </div>
               <div class="product-level text-regular">
                 <span>${product.level}</span>
@@ -35,7 +40,7 @@ const umrahTrips = ( async () => {
                   <span class="fs-6 text-regular d-block" style="margin-top: -5px; margin-right: 5px;">جنيه مصري</span>
                 </div>
                 <div class="overflow-hidden py-1 mb-1" style="height: 47px;">
-                  <p class="card-text text-gray">
+                  <p class="card-text text-gray fs-7 lh-lg">
                   ${product.description}
                   </p>
                 </div>

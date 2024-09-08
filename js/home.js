@@ -23,8 +23,13 @@ const latestOffers = ( async () => {
             class="product d-flex justify-content-center position-relative overflow-hidden mx-auto rounded-5 text-center text-white"
             onclick="getCatAndID(${product.id})">
             <img src="./img/${product.imgs[0]}" class="h-100" alt="img">
-            <div class="product-company">
+            <!-- <div class="product-company">
               <img src="./img/${product.company.companyLogo}" alt="logo">
+            </div> -->
+            <div class="trip-date">
+              <span class="day fs-7 d-block">${product.tripDay}</span>
+              <span class="day-num d-block">${product.tripDayNum}</span>
+              <span class="month fs-7 d-block">${product.tripMonth}</span>
             </div>
             <div class="product-level text-regular">
               <span>${product.level}</span>
@@ -57,8 +62,13 @@ const latestTravel = ( async () => {
             class="product d-flex justify-content-center position-relative overflow-hidden mx-auto rounded-5 text-center text-white"
             onclick="getCatAndID(${product.id})">
             <img src="./img/${product.imgs[0]}" class="h-100" alt="img">
-            <div class="product-company">
+            <!-- <div class="product-company">
               <img src="./img/${product.company.companyLogo}" alt="logo">
+            </div> -->
+            <div class="trip-date">
+              <span class="day fs-7 d-block">${product.tripDay}</span>
+              <span class="day-num d-block">${product.tripDayNum}</span>
+              <span class="month fs-7 d-block">${product.tripMonth}</span>
             </div>
             <div class="product-text">
               <h3 class="fs-4 mb-1">${product.tripTitle}</h3>
