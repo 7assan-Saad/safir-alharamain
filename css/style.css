@@ -694,11 +694,11 @@ input, select {
   }
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .adds .swiper-slide {
     height: 140px !important;
   }
-}
+} */
 
 .adds .arrow-go {
   display: block;
