@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="./css/call-us.css" />
   <link rel="stylesheet" href="./css/scroll-up.css" />
   <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="./js/firebaseConfig.js"></script>
   <title>الرحلات السياحية الداخلية</title>
 </head>
 
@@ -146,7 +149,7 @@
   <section class="mb-5">
     <div class="container">
       <div class="travel-trip row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-0 gx-sm-5 gy-5">
-        <!-- render all of travel trips from travel-trips.js file -->
+        <!-- render all of 'travel trips' from 'travel-trips.js' file -->
       </div>
     </div>
   </section>
@@ -437,7 +440,7 @@
                   <a href="" class="text-gray">سياسة الخصوصية</a>
                 </li>
                 <li>
-                  <a href="" class="text-gray">الأسئلة الشائعة</a>
+                  <a href="questions.html" class="text-gray">الأسئلة الشائعة</a>
                 </li>
                 <li>
                   <a href="" class="text-gray">خدمات التقسيط</a>
@@ -486,8 +489,10 @@
                     <div class="contact-icon rounded-circle d-flex align-items-center justify-content-center">
                       <img src="./img/icons/map.png" alt="phone icon">
                     </div>
-                    <p class="m-0 mt-2 ms-3">
-                      الفروع : الحضرة - الساعة - العوايد - العصافرة - المنشية
+                    <p class="lh-lg m-0 mt-2 ms-3">
+                      الفروع : محطة الرمل - الحضرة - الساعة
+                      <br>
+                      العوايد - العصافرة - المنشية
                     </p>
                   </li>
 
@@ -529,13 +534,13 @@
     </script>
   <script src="./js/loading-page.js" defer></script>
   <script src="./js/travel-trips.js" defer></script>
+  <script src="./js/goToDetails.js" defer></script>
   <script src="./js/travel-booking.js" defer></script>
   <script src="./js/active-nav-link.js" defer></script>
   <script src="./js/open-close-nav.js" defer></script>
   <script src="./js/call-us.js" defer></script>
   <script src="./js/scroll-up.js" defer></script>
   <script src="./js/send-to-whatsapp.js" defer></script>
-  <script src="./js/goToDetails.js" defer></script>
   <script>
     function scrollToUp() { scrollTo(0, 0) }
     function scrollToDown() { scrollTo(0, document.body.offsetHeight) }

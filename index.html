@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="./css/call-us.css" />
   <link rel="stylesheet" href="./css/scroll-up.css" />
   <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="./js/firebaseConfig.js"></script>
   <title>سفير الحرمين</title>
 
 </head>
@@ -281,6 +284,18 @@
           <div class="swiper-wrapper">
 
             <!-- Slides Items -->
+            <div class="swiper-slide d-flex align-items-center justify-content-center text-center">
+              <a href="umrah-trips.html" class="arrow-go">
+                <img src="./img/special-offer-10-days.png" width="90%" alt="special-offer-10-days">
+              </a>
+            </div>
+
+            <div class="swiper-slide d-flex align-items-center justify-content-center text-center">
+              <a href="umrah-trips.html" class="arrow-go">
+                <img src="./img/special-offer-15-days.png" width="90%" alt="special-offer-15-days">
+              </a>
+            </div>
+
             <div class="swiper-slide d-flex align-items-center justify-content-center text-center">
               <a href="flight-booking.html" class="arrow-go">
                 <img src="./img/flight-add.png" width="90%" alt="flight-add">
@@ -739,7 +754,7 @@
                   <a href="" class="text-gray">سياسة الخصوصية</a>
                 </li>
                 <li>
-                  <a href="" class="text-gray">الأسئلة الشائعة</a>
+                  <a href="questions.html" class="text-gray">الأسئلة الشائعة</a>
                 </li>
                 <li>
                   <a href="" class="text-gray">خدمات التقسيط</a>
@@ -788,8 +803,10 @@
                     <div class="contact-icon rounded-circle d-flex align-items-center justify-content-center">
                       <img src="./img/icons/map.png" alt="phone icon">
                     </div>
-                    <p class="m-0 mt-2 ms-3">
-                      الفروع : الحضرة - الساعة - العوايد - العصافرة - المنشية
+                    <p class="lh-lg m-0 mt-2 ms-3">
+                      الفروع : محطة الرمل - الحضرة - الساعة
+                      <br>
+                      العوايد - العصافرة - المنشية
                     </p>
                   </li>
 

@@ -847,9 +847,9 @@ input, select {
 
 .trip-date .day-num {
   color: var(--secondary);
-  font-size: 2rem;
-  margin-top: 4px;
-
+  font-size: 1.5rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .trip-date .month {
@@ -1149,6 +1149,10 @@ input, select {
 
 /* start umrah & travel page */
 
+.umrah-trip, .travel-trip {
+  min-height: 600px;
+}
+
 .card .image {
   position: relative;
   overflow: hidden;
@@ -1311,6 +1315,9 @@ input, select {
 }
 /* end umrah & travel page */
 
+.details-container {
+  min-height: 1000px
+}
 
 /* start umrah-details */
 
@@ -1625,4 +1632,16 @@ table > * td:first-child {
   min-width: 325px;
   height: 645px;
   max-height: 645px;
+}
+
+@media(max-width: 576px){
+  .blog-photo {
+    width: 100% !important;
+  }
+}
+
+.news-content > * .line-height {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
