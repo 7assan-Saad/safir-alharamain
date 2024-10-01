@@ -455,7 +455,7 @@ input, select {
   z-index: 10;
   bottom: -300px;
   left: -50px;
-  width: 400px;
+  width: 370px;
 }
 
 @media(min-width: 1199px) {
@@ -589,12 +589,12 @@ input, select {
   position: absolute;
   z-index: 10;
   top: 39%;
-  left: 38%;
+  left: 35%;
   transform: translate(-50%, -50%);
   width: 300px;
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 1300px) {
   .carousel-inner .item-2::before {
     width: 225%;
   }
@@ -1316,7 +1316,7 @@ input, select {
 /* end umrah & travel page */
 
 .details-container {
-  min-height: 1000px
+  min-height: 1000px;
 }
 
 /* start umrah-details */

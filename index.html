@@ -7,6 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="سفير الحرمين فريق متخصص في تقديم خدمات شاملة ومتميزة للحجاج والمعتمرين، نسعى دائماً لضمان راحتكم وسلامتكم وتقديم تجربة فريدة لا تُنسى">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="سفير الحرمين">
+  <meta property="og:description"
+    content="سفير الحرمين فريق متخصص في تقديم خدمات شاملة ومتميزة للحجاج والمعتمرين، نسعى دائماً لضمان راحتكم وسلامتكم وتقديم تجربة فريدة لا تُنسى">
+  <meta property="og:image" content="https://safiralharamain.com/img/web-img.png">
+  <meta property="og:url" content="https://safiralharamain.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="سفير الحرمين">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ar">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="safiralharamain">
+  <meta name="twitter:title" content="سفير الحرمين">
+  <meta name="twitter:description"
+    content="سفير الحرمين فريق متخصص في تقديم خدمات شاملة ومتميزة للحجاج والمعتمرين، نسعى دائماً لضمان راحتكم وسلامتكم وتقديم تجربة فريدة لا تُنسى">
+  <meta name="twitter:image" content="https://safiralharamain.com/img/web-img.png">
+
   <link rel="shortcut icon" href="./img/favicon.ico" />
   <!-- bootstrap.rtl -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
@@ -25,8 +46,12 @@
 
 <body>
 
-  <audio autoplay style="display: none;">
+  <!-- <audio autoplay style="display: none;">
     <source src="./img/talbiyah.mp4" type="audio/mp4">
+  </audio> -->
+
+  <audio autoplay style="display: none;">
+    <source src="./img/safir.mp3" type="audio/mp3">
   </audio>
 
   <!-- scroll up -->
@@ -129,8 +154,8 @@
   </nav>
   <!--end navbar-->
 
-  <!-- start carousel -->
-  <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+  <!-- start carousel data-bs-ride="carousel" -->
+  <div id="carouselIndicators" class="carousel slide">
 
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true"
@@ -285,15 +310,15 @@
 
             <!-- Slides Items -->
             <div class="swiper-slide d-flex align-items-center justify-content-center text-center">
-              <a href="umrah-trips.html" class="arrow-go">
+              <div onclick="tenDaysDetails()" class="arrow-go cursor-pointer">
                 <img src="./img/special-offer-10-days.png" width="90%" alt="special-offer-10-days">
-              </a>
+              </div>
             </div>
 
             <div class="swiper-slide d-flex align-items-center justify-content-center text-center">
-              <a href="umrah-trips.html" class="arrow-go">
+              <div onclick="fifteenDaysDetails()" class="arrow-go cursor-pointer">
                 <img src="./img/special-offer-15-days.png" width="90%" alt="special-offer-15-days">
-              </a>
+              </div>
             </div>
 
             <div class="swiper-slide d-flex align-items-center justify-content-center text-center">

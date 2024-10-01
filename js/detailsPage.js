@@ -235,11 +235,15 @@ let tripDetails
                     </button>
                     <ul class="dropdown-menu rounded-4">
                       <li class="dropdown-item">عمرة ترانزيت</li>
+                      <li class="dropdown-item">عرض خاص</li>
                       <li class="dropdown-item">رحلة عمرة المولد النبوي</li>
+                      <li class="dropdown-item">رحلة عمرة اقتصادي</li>
+                      <li class="dropdown-item">رحلة عمرة 3 نجــوم</li>
                       <li class="dropdown-item">رحلة عمرة 4 نجــوم</li>
                       <li class="dropdown-item">رحلة عمرة 5 نجــوم</li>
                       <li class="dropdown-item">رحلة عمرة رجــب</li>
                       <li class="dropdown-item">رحلة عمرة شعبـان</li>
+                      <li class="dropdown-item">رحلة عمرة شعبـان رمضـان</li>
                       <li class="dropdown-item">رحلة عمرة رمضــان</li>
                     </ul>
                   </div>
@@ -752,7 +756,6 @@ let tripDetails
   }
   
 })()
-
 
 
 function renderImgs() {
