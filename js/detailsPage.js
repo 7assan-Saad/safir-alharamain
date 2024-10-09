@@ -108,14 +108,6 @@ let tripDetails
                 <td class="table-row">${tripDetails.quadruplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
               </tr>
               ${
-                tripDetails.binaryPrice != "" ? /*html*/`
-                    <tr>
-                      <td class="table-row">سعر الثنائي</td>
-                      <td class="table-row">${tripDetails.binaryPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-                    </tr>
-                  ` : ''
-              }
-              ${
                 tripDetails.triplePrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الثلاثي</td>
@@ -123,7 +115,14 @@ let tripDetails
                     </tr>
                   ` : ''
               }
-
+              ${
+                tripDetails.binaryPrice != "" ? /*html*/`
+                    <tr>
+                      <td class="table-row">سعر الثنائي</td>
+                      <td class="table-row">${tripDetails.binaryPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+                    </tr>
+                  ` : ''
+              }
               ${
                 tripDetails.infantPrice != "" ? /*html*/`
                     <tr>
