@@ -103,6 +103,10 @@ let tripDetails
                     </tr>
                   ` : ''
               }
+              <tr>
+                <td class="table-row">سعر الرباعي</td>
+                <td class="table-row">${tripDetails.quadruplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+              </tr>
               ${
                 tripDetails.binaryPrice != "" ? /*html*/`
                     <tr>
@@ -119,10 +123,7 @@ let tripDetails
                     </tr>
                   ` : ''
               }
-              <tr>
-                <td class="table-row">سعر الرباعي</td>
-                <td class="table-row">${tripDetails.quadruplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-              </tr>
+
               ${
                 tripDetails.infantPrice != "" ? /*html*/`
                     <tr>
@@ -186,10 +187,8 @@ let tripDetails
           <ul class="mt-3">
             <li class="pro-item lh-lg">جواز سفر صالح لمدة لا تقل عن عام على الأقل.</li>
             <li class="pro-item lh-lg">شهادة صحية خاصة بالحج والعمرة.</li>
-            <li class="pro-item lh-lg">عدد ( 3 ) صور شخصية خلفية بيضاء.</li>
+            <li class="pro-item lh-lg">عدد ( 1 ) صور شخصية خلفية بيضاء.</li>
             <li class="pro-item lh-lg">استخراج تصريح سفر لمن هم في سن التجنيد.</li>
-            <li class="pro-item lh-lg">إيجاد محرم للنساء لمن هى أقل من ٤٥ سنة.</li>
-            <li class="pro-item lh-lg">يلزم مرافق للأطفال (الذكور) تحت ١٨ سنة.</li>
           </ul>
           <p class="mt-5">*تطبق الشروط والأحكام.</p>
           <p class="text-bold text-secondary lh-lg mt-3">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>
