@@ -27,6 +27,6 @@ function shareOnWhatsApp() {
 }
 
 function copyLink() {
-  navigator.clipboard.writeText(pageURL)
+  navigator.clipboard.writeText(window.location.href)
   // console.log('تم النسخ')
 }
