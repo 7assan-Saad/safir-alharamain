@@ -296,6 +296,9 @@ input, select {
   .navbar-brand img {
     width: 130px;
   }
+  .btn-primary {
+    width: 100% !important;
+  }
 }
 
 .navbar {

@@ -15,7 +15,7 @@ const latestUmrahTrips = (async () => {
     // Sort the trips array by 'quadruplePrice' from lowest to highest
     trips.sort((a, b) => a.quadruplePrice - b.quadruplePrice)
     tripsSlice = trips.slice(0, 4)
-    console.log(tripsSlice)
+    // console.log(tripsSlice)
   })
 
   let renderProducts = tripsSlice.map(product => { 
