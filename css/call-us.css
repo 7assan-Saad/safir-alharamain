@@ -104,7 +104,11 @@
   .social-media .social-item {
     width: 120px;
     height: 35px;
-    font-size: 14px;
+    font-size: 14px !important;
     padding: 15px 0px 15px 0px !important;
+  }
+
+  .social-media .social-item .copy-link span {
+    font-size: 14px !important;
   }
 }

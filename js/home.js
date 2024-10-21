@@ -51,10 +51,10 @@ const latestUmrahTrips = (async () => {
 })()
 
 // latest travel offers
-
 const latestTravelPro = document.querySelector('.travel-latest')
 const latestTravelTrips = (async () => {
   let trips = []
+  let tripsSlice
   await db.collection('trips').where('category', '==', 'insideTrip').get()
   .then(category => {
     category.forEach(cat => {
@@ -62,7 +62,10 @@ const latestTravelTrips = (async () => {
       obj.id = `${cat.id}`
       trips.push(obj)
     })
-    // console.log(trips)
+    // Sort the trips array by 'quadruplePrice' from lowest to highest
+    trips.sort((a, b) => a.mainPrice - b.mainPrice)
+    tripsSlice = trips.slice(0, 4)
+    // console.log(tripsSlice)
   })
 
   let renderProducts = trips.map(product => { 
