@@ -176,12 +176,12 @@
   </nav>
   <!--end navbar-->
 
-  <header class="hajj-head-page head-img position-relative overflow-hidden mb-5">
+  <header class="hajj-head-page head-img position-relative overflow-hidden">
     <div class="container">
       <div
         class="head-page-text d-flex align-items-center justify-content-center text-white text-center position-relative z-3">
         <div>
-          <h1 class="fs-1 mb-3 mt-3">أفضل أسعار برامج الحج</h1>
+          <h1 class="fs-1 mb-3 mt-3">أفضل أسعار برامج الحـج</h1>
           <p class="fs-4 lh-lg">
             وأفضل الخدمات من طيران وفنادق وباصات
             <br>
@@ -195,7 +195,95 @@
     </div>
   </header>
 
-  <div class="container">
+  <!-- start booking form -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <div class="booking-form bg-white rounded-5 shadow p-5 mx-auto" style="max-width: 900px;">
+        <h3 class="booking-title fs-1 text-center text-secondary mx-auto mt-2 mb-5">إستمارة تسجيل الحـج</h3>
+        <form class="text-regular" action="">
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="text-gray mb-1 mb-1" for="name">الاسم</label>
+              <input type="text" name="name" id="name" class="form-control form-control-lg rounded-4">
+            </div>
+            <div class="col">
+              <label class="text-gray mb-1" for="phone">الموبايل</label>
+              <input type="text" name="phone" id="phone" class="form-control form-control-lg rounded-4">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="text-gray mb-1 mb-1" for="address">العنوان</label>
+              <input type="text" name="address" id="address" class="form-control form-control-lg rounded-4">
+            </div>
+            <div class="col">
+              <label class="text-gray mb-1" for="governorate">المحافظة</label>
+              <input type="text" name="governorate" id="governorate" class="form-control form-control-lg rounded-4">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="text-gray mb-1" for="trip-name">نوح الحـج</label>
+              <div class="dropdown">
+                <button class="select text-start btn bg-white border rounded-4 w-100 dropdown-toggle" name="trip-name"
+                  id="trip-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  *حدد نوع الحـج
+                </button>
+                <ul class="dropdown-menu rounded-4">
+                  <li class="dropdown-item">سياحـي</li>
+                  <li class="dropdown-item">إقتصـادي</li>
+                  <li class="dropdown-item">بـري</li>
+                  <li class="dropdown-item"><span style="font-family: 'arial'">VIP</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+          <div class="row mb-5">
+            <span class="text-gray mb-3">هل قمت بالحج من قبل ؟</span>
+            <div class="d-flex">
+              <div class="form-check m-left">
+                <input class="form-check-input" type="radio" name="meals" id="meals-yes">
+                <label class="form-check-label mt-2px" for="meals-yes">
+                  نعم
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="meals" id="meals-no" checked>
+                <label class="form-check-label mt-2px" for="meals-no">
+                  لا
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4" style="margin-top: -1rem;">
+            <label class="form-label text-gray" for="msg">رسالــة / استفســار</label>
+            <textarea class="form-control rounded-4" id="msg" rows="5" style="padding: 1rem;"></textarea>
+          </div>
+
+          <div class="mt-5">
+            <button type="button" class="send btn btn-secondary btn-lg rounded-4 px-5 d-inline-flex align-items-center"
+              style="padding-top: .75rem; width: 200px;">
+              <span class="mx-2">إرسال</span>
+              <img src="./img/icons/send.svg" width="25px" alt="send-icon" style="margin-top: -4px;">
+            </button>
+            <button type="button" class="cencel btn btn-light btn-lg transition rounded-4 px-5 ms-3"
+              style="padding-top: .75rem; width: 200px;">
+              إلغاء
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- end booking form -->
+
+  <!-- <div class="container">
     <div class="coming-soon text-center text-white bg-secondary rounded-5 mx-auto mb-5" style="padding: 100px 40px;">
       <h2 class="fs-1 lh-lg border border-1 border-white rounded-5 mx-auto pt-3"
         style="min-width: 300px; max-width: 500px; background-color: rgba(255,255,255,.15);">
@@ -220,8 +308,7 @@
         أ/ <span class="fs-3 text-bold">أحمـــد شـريــــف</span>
       </p>
     </div>
-  </div>
-
+  </div> -->
 
   <!-- start join-us -->
   <section class="join-us section bg-light text-center">
@@ -393,8 +480,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-  <!-- <script src="./js/goToDetails.js" defer></script> -->
   <script src="./js/loading-page.js" defer></script>
+  <!-- <script src="./js/hajj-trips.js" defer></script> -->
+  <script src="./js/hajj-booking.js" defer></script>
+  <!-- <script src="./js/goToDetails.js" defer></script> -->
   <script src="./js/active-nav-link.js" defer></script>
   <script src="./js/open-close-nav.js" defer></script>
   <script src="./js/call-us.js" defer></script>
