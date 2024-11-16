@@ -21,7 +21,7 @@ let tripDetails
   if (tripDetails.category == 'umrah') {
     detailsContainer.innerHTML = /*html*/`
       <div class="container mx-auto px-3" style="max-width: 1000px;">
-        <h1 class="fs-2 text-center mb-0" style="margin-top: 10rem;">${tripDetails.tripTitle}</h1>
+        <h1 class="fs-2 text-center lh-lg mb-0" style="margin-top: 10rem;">${tripDetails.tripTitle}</h1>
   
         <!-- start swiper -->
         <div class="details-carousel swiper">
@@ -55,6 +55,8 @@ let tripDetails
         </div>
         <!-- end swiper -->
   
+        <p class="fs-6 text-center lh-lg mt-2">${tripDetails.description}</p>
+
         <div class="program-details mx-auto mt-5" style="max-width: 900px;">
           <h3 class="fs-5 mb-3">تفاصيل البرنامج:</h3>
           <table class="table table-striped table-bordered rounded-4 overflow-hidden mb-4">
@@ -436,8 +438,8 @@ let tripDetails
   
           </div>
           <!-- end swiper -->
+
           <p class="fs-6 text-center lh-lg mt-3">${tripDetails.description}</p>
-        
   
           <div class="program-details mx-auto mt-5" style="max-width: 900px;">
             <h3 class="fs-5 mb-3">تفاصيل الرحلة:</h3>
