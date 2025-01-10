@@ -200,16 +200,15 @@
     </div>
   </header>
 
+
   <section class="mb-5">
     <div class="container">
       <div class="mb-4" style="margin-top: 4.5rem;">
-        <h2 class="head-right position-relative d-inline-block fs-3 ms-4">أحدث رحلات العمرة</h2>
+        <h2 class="head-right position-relative d-inline-block fs-3 ms-4">رحلات العمرة السابقة</h2>
         <span class="text-regular fs-4 text-secondary d-inline-block ms-1">١٤٤٦ هـ</span>
       </div>
-      <div class="container p-0">
-        <div class="new-umrah-trip row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 1100px;">
-          <!-- render all of 'new umrah trips' from 'umrah-trips.js' file -->
-        </div>
+      <!-- render all of 'previous umrah trips' from 'previous-umrah-trips.js' file -->
+      <div class="umrah-trip row row-cols-1 row-cols-md-2 row-cols-lg-3">
       </div>
     </div>
   </section>
@@ -218,14 +217,36 @@
     <ul class="pagination">
       <li class="page-item text-center">
         <a class="page-link cursor-pointer d-block rounded-circle text-black fs-5 me-3"
-          style="width: 45px; height: 45px; line-height: 1.9!important;" onclick="scrollToUp()">1</a>
+          style="width: 45px; height: 45px; line-height: 1.9!important;" href="umrah-trips.html">1</a>
       </li>
       <li class="page-item text-center">
         <a class="page-link d-block rounded-circle text-black fs-5 me-3"
-          style="width: 45px; height: 45px; line-height: 1.9!important;" href="previous-umrah-trips.html">2</a>
+          style="width: 45px; height: 45px; line-height: 1.9!important;" onclick="scrollToUp()">2</a>
       </li>
     </ul>
   </nav>
+
+  <!--
+  <div class="container">
+    <div class="coming-soon text-center text-white bg-secondary rounded-5 mx-auto mb-5" style="padding: 100px 40px;">
+      <h2 class="fs-1 lh-lg border border-1 border-white rounded-5 mx-auto pt-3"
+        style="min-width: 300px; max-width: 500px; background-color: rgba(255,255,255,.15);">
+        العمرة قربت جداً
+      </h2>
+      <p class="fs-4 lh-lg mt-4 mb-0">
+        منتظرين بيان العمرة من وزارة السياحة
+        <br>
+        بعد نزول البيان هنبدأ في إصدار التأشيرات في مصر
+        <br>
+        لا يوجد أي معلومة عن العمرة حالياً بناءً على عدم نزول البيان من الوزارة
+        <br>
+        لو عندك أي استفسار أو عاوز تخلص أوراقك
+        <br>
+        رجاء تواصل معنا على الواتس أب
+      </p>
+    </div>
+  </div>
+  -->
 
   <!-- start booking form -->
   <section class="section bg-secondary">
@@ -606,7 +627,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
   <script src="./js/loading-page.js" defer></script>
-  <script src="./js/umrah-trips.js" defer></script>
+  <script src="./js/previous-umrah-trips.js" defer></script>
   <script src="./js/umrah-booking.js" defer></script>
   <script src="./js/goToDetails.js" defer></script>
   <script src="./js/active-nav-link.js" defer></script>
