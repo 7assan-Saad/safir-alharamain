@@ -101,7 +101,7 @@ const latestTravelTrips = (async () => {
         <div
           class="product d-flex justify-content-center position-relative overflow-hidden mx-auto rounded-5 text-center text-white cursor-pointer"
           onclick="getID('${product.id}')">
-          <img src="./img/${product.imgs[0]}" class="h-100" alt="img">
+          <img src="./img/inside-trip-imgs/${product.imgs[0]}" class="h-100" alt="img">
           <!-- <div class="product-company">
             <img src="./img/${product.company.companyLogo}" alt="logo">
           </div> -->

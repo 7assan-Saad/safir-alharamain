@@ -29,7 +29,7 @@ const getTripsByCategory = (async () => {
                 <span class="month fs-7 d-block">${product.tripMonth}</span>
               </div>
               <div onclick="getID('${product.id}')" class="image d-flex justify-content-center cursor-pointer">
-                <img src="./img/${product.imgs[0]}" class="h-100" alt="">
+                <img src="./img/inside-trip-imgs/${product.imgs[0]}" class="h-100" alt="">
               </div>
               <div class="card-body p-4">
                 <div class="overflow-hidden py-1 mb-1" style="height: 32px;">

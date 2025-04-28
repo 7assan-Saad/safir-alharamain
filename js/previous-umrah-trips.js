@@ -31,7 +31,7 @@ const getTripsByCategory = (async () => {
               <span>${product.level}</span>
             </div>
             <div onclick="getID('${product.id}')" class="image d-flex justify-content-center cursor-pointer">
-              <img src="./img/${product.imgs[0]}" class="h-100" alt="kaaba photo">
+              <img src="./img/umrah-imgs/${product.imgs[0]}" class="h-100" alt="kaaba photo">
             </div>
             <div class="card-body p-4">
               <div class="overflow-hidden py-1 mb-1" style="height: 32px;">
