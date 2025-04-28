@@ -154,6 +154,9 @@ button:focus-visible, .btn:focus-visible,
 .page-link:focus {
   box-shadow: none;
 }
+.page-link {
+  user-select: none;
+}
 
 .fs-7 {
   font-size: .9rem !important;
