@@ -34,7 +34,7 @@ let tripDetails
                     return /*html*/`
                       <div class="swiper-slide mx-auto w-100">
                         <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
-                          <img class="w-100" src="./img/${img}" alt="kaaba">
+                          <img class="w-100" src="./img/umrah-imgs/${img}" alt="kaaba">
                         </div>
                       </div>
                     `
@@ -442,21 +442,30 @@ let tripDetails
           <p class="fs-6 text-center lh-lg mt-3">${tripDetails.description}</p>
   
           <div class="program-details mx-auto mt-5" style="max-width: 900px;">
-            <h3 class="fs-5 mb-3">تفاصيل الرحلة:</h3>
+            <h3 class="fs-5 mb-3">التفاصيل:</h3>
             <table class="table table-striped table-bordered rounded-4 overflow-hidden mb-4">
               <tbody>
                 <tr>
                   <td class="table-row">اسم الرحلة</td>
                   <td class="table-row">${tripDetails.tripTitle}</td>
                 </tr>
-                <tr>
-                  <td class="table-row">مدة الرحلة</td>
-                  <td class="table-row">${tripDetails.flightDuration}</td>
-                </tr>
-                <tr>
-                  <td class="table-row">تاريخ الرحلة</td>
-                  <td class="table-row">${tripDetails.tripDate}</td>
-                </tr>
+
+                ${
+                  tripDetails.flightDuration != "" ? /*html*/`
+                    <tr>
+                      <td class="table-row">مدة الرحلة</td>
+                      <td class="table-row">${tripDetails.flightDuration}</td>
+                    </tr>
+                    ` : ''
+                }
+                ${
+                  tripDetails.tripDate != "" ? /*html*/`
+                    <tr>
+                      <td class="table-row">تاريخ الرحلة</td>
+                      <td class="table-row">${tripDetails.tripDate}</td>
+                    </tr>
+                    ` : ''
+                }
                 ${
                   tripDetails.returnDate != "" ? /*html*/`
                     <tr>
@@ -465,10 +474,14 @@ let tripDetails
                     </tr>
                     ` : ''
                 }
-                <tr>
-                  <td class="table-row">مسار الرحلة</td>
-                  <td class="table-row">${tripDetails.itinerary}</td>
-                </tr>
+                ${
+                  tripDetails.itinerary != "" ? /*html*/`
+                    <tr>
+                      <td class="table-row">مسار الرحلة</td>
+                      <td class="table-row">${tripDetails.itinerary}</td>
+                    </tr>
+                    ` : ''
+                }
                 ${
                   tripDetails.tripTransfer != "" ? /*html*/`
                     <tr>
@@ -477,11 +490,15 @@ let tripDetails
                     </tr>
                     ` : ''
                 }
-                <tr>
-                  <td class="table-row">سعر الرحلة</td>
-                  <td class="table-row">${tripDetails.tripPrice}</td>
-                  <!-- <span class="ms-1 text-regular">جنيه</span> -->
-                </tr>
+                ${
+                  tripDetails.tripPrice != "" ? /*html*/`
+                    <tr>
+                      <td class="table-row">سعر الرحلة</td>
+                      <td class="table-row">${tripDetails.tripPrice}</td>
+                      <!-- <span class="ms-1 text-regular">جنيه</span> -->
+                    </tr>
+                    ` : ''
+                }
                 ${
                   tripDetails.childPrice != "" ? /*html*/`
                     <tr>
@@ -499,7 +516,7 @@ let tripDetails
           </div>
   
           <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
-            <h3 class="fs-5">مميزات الرحلة:</h3>
+            <h3 class="fs-5">المميزات:</h3>
             <ul class="mt-3">
                 ${
                   tripDetails.tripFeatures.map( pro => {
@@ -765,7 +782,7 @@ function renderImgs() {
     return /*html*/`
     <div class="swiper-slide mx-auto w-100">
       <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
-        <img class="w-100" src="./img/${tripDetails.imgs[i]}" alt="">
+        <img class="w-100" src="./img/inside-trip-imgs/${tripDetails.imgs[i]}" alt="">
       </div>
     </div>
     `

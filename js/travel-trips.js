@@ -18,16 +18,20 @@ const getTripsByCategory = (async () => {
 
       return /*html*/`
         <div class="col card-link">
-          <div>
-            <div class="card rounded-5 overflow-hidden mx-auto" style="max-width: 425px">
+          <div class="h-100">
+            <div class="card rounded-5 overflow-hidden mx-auto h-100" style="max-width: 425px">
               <!-- <div class="product-company">
                 <img src="./img/${product.company.companyLogo}" alt="">
               </div> -->
-              <div class="trip-date">
-                <span class="day fs-7 d-block">${product.tripDay}</span>
-                <span class="day-num d-block">${product.tripDayNum}</span>
-                <span class="month fs-7 d-block">${product.tripMonth}</span>
-              </div>
+              ${
+                product.tripDay != "" ? /*html*/`
+                  <div class="trip-date">
+                    <span class="day fs-7 d-block">${product.tripDay}</span>
+                    <span class="day-num d-block">${product.tripDayNum}</span>
+                    <span class="month fs-7 d-block">${product.tripMonth}</span>
+                  </div>
+                ` : ''
+              }
               <div onclick="getID('${product.id}')" class="image d-flex justify-content-center cursor-pointer">
                 <img src="./img/inside-trip-imgs/${product.imgs[0]}" class="h-100" alt="">
               </div>
@@ -37,7 +41,7 @@ const getTripsByCategory = (async () => {
                 </div>
                 <div class="text-primary d-flex align-items-center justify-content-start">
                   <p class="fs-3 text-bold mb-0">${product.mainPrice}</p>
-                  <span class="fs-6 text-regular d-block" style="margin-top: -5px; margin-right: 5px;">جنيه</span>
+                  <!-- <span class="fs-6 text-regular d-block" style="margin-top: -5px; margin-right: 5px;">جنيه</span> -->
                 </div>
                 <div class="overflow-hidden py-1 mb-1" style="height: 55px;">
                   <p class="card-text text-gray fs-7 lh-lg">
