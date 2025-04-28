@@ -105,17 +105,25 @@ const latestTravelTrips = (async () => {
           <!-- <div class="product-company">
             <img src="./img/${product.company.companyLogo}" alt="logo">
           </div> -->
-          <div class="trip-date">
-            <span class="day fs-7 d-block">${product.tripDay}</span>
-            <span class="day-num d-block">${product.tripDayNum}</span>
-            <span class="month fs-7 d-block">${product.tripMonth}</span>
-          </div>
+          ${
+            product.tripDay != "" ? /*html*/`
+              <div class="trip-date">
+                <span class="day fs-7 d-block">${product.tripDay}</span>
+                <span class="day-num d-block">${product.tripDayNum}</span>
+                <span class="month fs-7 d-block">${product.tripMonth}</span>
+              </div>
+            ` : ''
+          }
           <div class="product-text">
             <h3 class="fs-4 mb-1">${product.tripTitle}</h3>
-            <div class="d-flex align-items-center justify-content-center">
-              <p class="fs-3 text-bold mb-0">${product.mainPrice}</p>
-              <span class="fs-6 text-regular d-block" style="margin-top: -5px; margin-right: 5px;">جنيه مصري</span>
-            </div>
+            ${
+              product.mainPrice != "" ? /*html*/`
+                <div class="d-flex align-items-center justify-content-center">
+                  <p class="fs-3 text-bold mb-0">${product.mainPrice}</p>
+                  <!-- <span class="fs-6 text-regular d-block" style="margin-top: -5px; margin-right: 5px;">جنيه مصري</span> -->
+                </div>
+              ` : ''
+            }
           </div>
         </div>
       </div>
