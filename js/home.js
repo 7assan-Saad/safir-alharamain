@@ -1,31 +1,31 @@
 
 // all umrah trips
-const umrahTripsContainer = document.querySelector('.new-umrah-trip')
+// const umrahTripsContainer = document.querySelector('.new-umrah-trip')
 
-const getTripsByCategory = (async () => {
-  let trips = []
-  let tripsSlice
-  await db.collection('trips').where('category', '==', 'new-umrah').get()
-  .then(category => {
-    category.forEach(cat => {
-      let obj = cat.data()
-      obj.id = `${cat.id}`
-      trips.push(obj)
-    })
-    // Sort the trips array by 'quadruplePrice' from lowest to highest
-    trips.sort((a, b) => a.sort - b.sort)
-    tripsSlice = trips.slice(0, 4)
-    // console.log(trips)
-  })
-  let renderUmrahTrips = tripsSlice.map(product => {
-    return /*html*/`
-      <div class="col p-lg-4 py-3">
-        <img src="./img/${product.img}" class="rounded-5 shadow" alt="" width="100%">
-      </div>
-    `
-  })
-    umrahTripsContainer.innerHTML = renderUmrahTrips.join('')
-})()
+// const getTripsByCategory = (async () => {
+//   let trips = []
+//   let tripsSlice
+//   await db.collection('trips').where('category', '==', 'new-umrah').get()
+//   .then(category => {
+//     category.forEach(cat => {
+//       let obj = cat.data()
+//       obj.id = `${cat.id}`
+//       trips.push(obj)
+//     })
+//     // Sort the trips array by 'quadruplePrice' from lowest to highest
+//     trips.sort((a, b) => a.sort - b.sort)
+//     tripsSlice = trips.slice(0, 4)
+//     // console.log(trips)
+//   })
+//   let renderUmrahTrips = tripsSlice.map(product => {
+//     return /*html*/`
+//       <div class="col p-lg-4 py-3">
+//         <img src="./img/${product.img}" class="rounded-5 shadow" alt="" width="100%">
+//       </div>
+//     `
+//   })
+//     umrahTripsContainer.innerHTML = renderUmrahTrips.join('')
+// })()
 
 // latest Umrah Trips
 // const latestOffersPro = document.querySelector('.umrah-latest')

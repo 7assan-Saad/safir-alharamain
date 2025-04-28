@@ -479,13 +479,14 @@ let tripDetails
                 }
                 <tr>
                   <td class="table-row">سعر الرحلة</td>
-                  <td class="table-row">${tripDetails.tripPrice}<span class="ms-1 text-regular">جنيه</span></td>
+                  <td class="table-row">${tripDetails.tripPrice}</td>
+                  <!-- <span class="ms-1 text-regular">جنيه</span> -->
                 </tr>
                 ${
                   tripDetails.childPrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الطفل</td>
-                      <td class="table-row">${tripDetails.childPrice}<span class="ms-1 text-regular">جنيه</span></td>
+                      <td class="table-row">${tripDetails.childPrice}</td>
                     </tr>
                     ` : ''
                 }
@@ -584,12 +585,13 @@ let tripDetails
                         <li class="dropdown-item">رحلة بورسعــيد</li>
                         <li class="dropdown-item">رحلة سيــــوه</li>
                         <li class="dropdown-item">رحلة أفريكانو بارك</li>
+                        <li class="dropdown-item">رحلة أليكس ووتر مارك</li>
                         <li class="dropdown-item">رحلة خان خديجــة</li>
                         <li class="dropdown-item">رحلة اليخــت</li>
-                        <li class="dropdown-item">رحلة أليكس ووتر مارك</li>
+                        <li class="dropdown-item">قرية لمــار</li>
                         <li class="dropdown-item">رحلة السيــرك</li>
-                        <li class="dropdown-item">رحلة مطــروح ( اليوم الواحد )</li>
-                        <li class="dropdown-item">رحلة مطــروح ( أيـام )</li>
+                        <li class="dropdown-item">لاس فيجاس ( مرسى مطروح )</li>
+                        <li class="dropdown-item">رحلة مطـروح ( اليوم الواحد )</li>
                       </ul>
                     </div>
                   </div>

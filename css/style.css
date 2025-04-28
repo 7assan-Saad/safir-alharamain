@@ -151,6 +151,9 @@ button:focus-visible, .btn:focus-visible,
 .swiper-button-prev:focus-visible, .swiper-button-next:focus-visible {
   outline: none;
 }
+.page-link:focus {
+  box-shadow: none;
+}
 
 .fs-7 {
   font-size: .9rem !important;
@@ -297,7 +300,7 @@ input, select {
     width: 130px;
   }
   .btn-primary {
-    width: 100% !important;
+    width: 86% !important;
   }
 }
 
