@@ -90,12 +90,12 @@ const latestTravelTrips = (async () => {
       trips.push(obj)
     })
     // Sort the trips array by 'quadruplePrice' from lowest to highest
-    trips.sort((a, b) => a.mainPrice - b.mainPrice)
+    trips.sort((a, b) => a.sort - b.sort)
     tripsSlice = trips.slice(0, 4)
     // console.log(tripsSlice)
   })
 
-  let renderProducts = trips.map(product => { 
+  let renderProducts = tripsSlice.map(product => { 
     return /*html*/`
       <div class="col p-3">
         <div

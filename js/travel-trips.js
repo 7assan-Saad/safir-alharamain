@@ -11,7 +11,10 @@ const getTripsByCategory = (async () => {
       obj.id = `${cat.id}`
       trips.push(obj)
     })
-    // console.log(trips)
+    trips.sort((a, b) => a.sort - b.sort)
+    // trips.forEach(trip => {
+    //   console.log(trip.tripDate)
+    // })
   })
 
   let renderTravelTrips = trips.map(product => {
