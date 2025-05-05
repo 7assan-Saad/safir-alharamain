@@ -608,6 +608,11 @@ let tripDetails
                         <li class="dropdown-item">قرية لمــار</li>
                         <li class="dropdown-item">رحلة السيــرك</li>
                         <li class="dropdown-item">لاس فيجاس ( مرسى مطروح )</li>
+                        <li class="dropdown-item">رحلة موز بالاس ( عيد الأضحى )</li>
+                        <li class="dropdown-item">رحلة موز بالاس ( منتصف يونيو )</li>
+                        <li class="dropdown-item">رحلة موز بالاس ( آخر يونيو )</li>
+                        <li class="dropdown-item">رحلة موز بالاس ( أول / منتصف سبتمبر )</li>
+                        <li class="dropdown-item">رحلة موز بالاس ( آخر سبتمبر )</li>
                         <li class="dropdown-item">رحلة مطـروح ( اليوم الواحد )</li>
                       </ul>
                     </div>
