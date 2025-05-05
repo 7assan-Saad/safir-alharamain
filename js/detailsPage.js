@@ -412,7 +412,7 @@ let tripDetails
   
   // inside trip details
   if (tripDetails.category == 'insideTrip') {
-    
+    console.log(tripDetails.imgs)
     detailsContainer.innerHTML = /*html*/`
         <div class="container mx-auto px-3" style="max-width: 1000px;">
   
@@ -422,8 +422,19 @@ let tripDetails
             <div class="slider-wrapper">
               <div class="swiper-wrapper">
   
-                  <!-- Slides Items -->
-                  ${ renderImgs() }
+                <!-- Slides Items -->
+                
+                ${
+                  tripDetails.imgs.map( img => {
+                    return /*html*/`
+                    <div class="swiper-slide mx-auto w-100">
+                      <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
+                        <img class="w-100" src="./img/inside-trip-imgs/${img}" alt="">
+                      </div>
+                    </div>
+                  `
+                  }).join('')
+                }
   
               </div>
   
@@ -782,14 +793,14 @@ let tripDetails
 })()
 
 
-function renderImgs() {
-  for (let i = 0; i < tripDetails.imgs.length; i++) {
-    return /*html*/`
-    <div class="swiper-slide mx-auto w-100">
-      <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
-        <img class="w-100" src="./img/inside-trip-imgs/${tripDetails.imgs[i]}" alt="">
-      </div>
-    </div>
-    `
-  }
-}
+// function renderImgs() {
+//   for (let i = 0; i < tripDetails.imgs.length; i++) {
+//     return /*html*/`
+//     <div class="swiper-slide mx-auto w-100">
+//       <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
+//         <img class="w-100" src="./img/inside-trip-imgs/${tripDetails.imgs[i]}" alt="">
+//       </div>
+//     </div>
+//     `
+//   }
+// }
