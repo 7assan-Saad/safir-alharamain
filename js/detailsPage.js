@@ -518,10 +518,14 @@ let tripDetails
                     </tr>
                     ` : ''
                 }
-                <tr>
-                  <td class="table-row">شركة السياحة</td>
-                  <td class="table-row">${tripDetails.company.companyName}</td>
-                </tr>
+                ${
+                  tripDetails.company.companyName != "" ? /*html*/`
+                    <tr>
+                      <td class="table-row">شركة السياحة</td>
+                      <td class="table-row">${tripDetails.company.companyName}</td>
+                    </tr>
+                    ` : ''
+                }
               </tbody>
             </table>
           </div>
@@ -608,23 +612,20 @@ let tripDetails
                         *حدد الرحلة
                       </button>
                       <ul class="dropdown-menu rounded-4">
-                        <li class="dropdown-item">رحلة القاهــرة</li>
-                        <li class="dropdown-item">رحلة الفيـــوم</li>
-                        <li class="dropdown-item">رحلة بورسعــيد</li>
-                        <li class="dropdown-item">رحلة سيــــوه</li>
-                        <li class="dropdown-item">رحلة أفريكانو بارك</li>
-                        <li class="dropdown-item">رحلة أليكس ووتر مارك</li>
-                        <li class="dropdown-item">رحلة خان خديجــة</li>
-                        <li class="dropdown-item">رحلة اليخــت</li>
-                        <li class="dropdown-item">قرية لمــار</li>
-                        <li class="dropdown-item">رحلة السيــرك</li>
-                        <li class="dropdown-item">لاس فيجاس ( مرسى مطروح )</li>
-                        <li class="dropdown-item">رحلة موز بالاس ( عيد الأضحى )</li>
-                        <li class="dropdown-item">رحلة موز بالاس ( منتصف يونيو )</li>
-                        <li class="dropdown-item">رحلة موز بالاس ( آخر يونيو )</li>
-                        <li class="dropdown-item">رحلة موز بالاس ( أول / منتصف سبتمبر )</li>
-                        <li class="dropdown-item">رحلة موز بالاس ( آخر سبتمبر )</li>
-                        <li class="dropdown-item">رحلة مطـروح ( اليوم الواحد )</li>
+                      <li class="dropdown-item">رحلة القاهــرة</li>
+                      <li class="dropdown-item">رحلة الفيـــوم</li>
+                      <li class="dropdown-item">رحلة بورسعــيد</li>
+                      <li class="dropdown-item">رحلة سيــــوه</li>
+                      <li class="dropdown-item">رحلة أفريكانو بارك</li>
+                      <li class="dropdown-item">رحلة أليكس ووتر مارك</li>
+                      <li class="dropdown-item">رحلة خان خديجــة</li>
+                      <li class="dropdown-item">رحلة اليخــت</li>
+                      <li class="dropdown-item">قرية لمــار</li>
+                      <li class="dropdown-item">رحلة السيــرك</li>
+                      <li class="dropdown-item">رحلة برج جوري ( مرسى مطروح )</li>
+                      <li class="dropdown-item">رحلة موز بالاس ( مرسى مطروح )</li>
+                      <li class="dropdown-item">رحلة لاس فيجاس ( مرسى مطروح )</li>
+                      <li class="dropdown-item">رحلة مرسى مطروح ( اليوم الواحد )</li>
                       </ul>
                     </div>
                   </div>
