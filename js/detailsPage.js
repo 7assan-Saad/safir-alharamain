@@ -412,7 +412,7 @@ let tripDetails
   
   // inside trip details
   if (tripDetails.category == 'insideTrip') {
-    console.log(tripDetails.imgs)
+    // console.log(tripDetails.imgs)
     detailsContainer.innerHTML = /*html*/`
         <div class="container mx-auto px-3" style="max-width: 1000px;">
   
