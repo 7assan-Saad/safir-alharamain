@@ -315,6 +315,10 @@ input, select {
   /* border-bottom: 1px solid rgba(0,0,0,0.175); */
 }
 
+.navbar.fixed-top {
+  z-index: 2000;
+}
+
 .navbar-toggler {
   border: none;
   margin-left: 5px;
@@ -968,7 +972,8 @@ input, select {
     margin-top: 15px !important;
     margin-right: 0px !important;
     margin-left: 0px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 30px !important;
+    border-radius: 20px !important;
   }
 }
 

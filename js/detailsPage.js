@@ -23,38 +23,10 @@ let tripDetails
       <div class="container mx-auto px-3" style="max-width: 1000px;">
         <h1 class="fs-2 text-center lh-lg mb-0" style="margin-top: 10rem;">${tripDetails.tripTitle}</h1>
   
-        <!-- start swiper -->
-        <div class="details-carousel swiper">
-          <div class="slider-wrapper">
-            <div class="swiper-wrapper">
-  
-                <!-- Slides Items -->
-                ${
-                  tripDetails.imgs.map( img => {
-                    return /*html*/`
-                      <div class="swiper-slide mx-auto w-100">
-                        <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
-                          <img class="w-100" src="./img/umrah-imgs/${img}" alt="kaaba">
-                        </div>
-                      </div>
-                    `
-                  }).join('')
-                }
-  
-            </div>
-  
-            <!-- pagination -->
-            <!-- <div class="swiper-pagination"></div> -->
-  
-            <!-- navigation buttons -->
-            <!-- <div class="swiper-button-prev text-gray"></div>
-            <div class="swiper-button-next text-gray"></div> -->
-  
-          </div>
-  
+        <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
+          <img class="w-100" src="./img/umrah-imgs/${tripDetails.imgs}" alt="">
         </div>
-        <!-- end swiper -->
-  
+
         <p class="fs-6 text-center lh-lg mt-2">${tripDetails.description}</p>
 
         <div class="program-details mx-auto mt-5" style="max-width: 900px;">
@@ -412,45 +384,57 @@ let tripDetails
   
   // inside trip details
   if (tripDetails.category == 'insideTrip') {
-    // console.log(tripDetails.imgs)
+    console.log(tripDetails.imgs.length)
     detailsContainer.innerHTML = /*html*/`
         <div class="container mx-auto px-3" style="max-width: 1000px;">
   
-          <h1 class="fs-2 text-center mb-0" style="margin-top: 10rem;">${tripDetails.tripTitle}</h1>
-          <!-- start swiper -->
-          <div class="details-carousel swiper">
-            <div class="slider-wrapper">
-              <div class="swiper-wrapper">
-  
-                <!-- Slides Items -->
-                
-                ${
-                  tripDetails.imgs.map( img => {
-                    return /*html*/`
-                    <div class="swiper-slide mx-auto w-100">
-                      <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
-                        <img class="w-100" src="./img/inside-trip-imgs/${img}" alt="">
-                      </div>
-                    </div>
-                  `
-                  }).join('')
-                }
-  
-              </div>
-  
-              <!-- pagination -->
-              <!-- <div class="swiper-pagination"></div> -->
-  
-              <!-- navigation buttons -->
-              <!-- <div class="swiper-button-prev text-gray"></div>
-              <div class="swiper-button-next text-gray"></div> -->
-  
-            </div>
-  
-          </div>
-          <!-- end swiper -->
+          <h1 class="fs-2 text-center mb-2" style="margin-top: 10rem;">${tripDetails.tripTitle}</h1>
+          ${
+            tripDetails.imgs.length > 1 ? /*html*/`
+              <!-- start swiper -->
+              <div class="details-carousel swiper">
+                <div class="slider-wrapper">
+                  <div class="swiper-wrapper">
+      
+                    <!-- Slides Items -->
+      
+                    ${
 
-          <p class="fs-6 text-center lh-lg mt-3">${tripDetails.description}</p>
+                      tripDetails.imgs.map( img => {
+                        return /*html*/`
+                        <div class="swiper-slide mb-3">
+                          <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
+                            <img class="w-100" src="./img/inside-trip-imgs/${img}" alt="">
+                          </div>
+                        </div>
+                      `
+                      }).join('')
+          
+                    }
+
+                  </div>
+      
+                  <!-- pagination -->
+                  <div class="swiper-pagination" style="bottom: 0px"></div>
+      
+                  <!-- navigation buttons -->
+                  <div class="swiper-button-prev text-gray"></div>
+                  <div class="swiper-button-next text-gray"></div>
+      
+                </div>
+      
+              </div>
+              <!-- end swiper -->
+
+              ` : /*html*/`
+                  <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
+                    <img class="w-100" src="./img/inside-trip-imgs/${tripDetails.imgs}" alt="">
+                  </div>
+              `
+          }
+
+
+          <p class="fs-6 text-center lh-lg mt-4">${tripDetails.description}</p>
   
           <div class="program-details mx-auto mt-5" style="max-width: 900px;">
             <h3 class="fs-5 mb-3">التفاصيل:</h3>
@@ -792,16 +776,3 @@ let tripDetails
   }
   
 })()
-
-
-// function renderImgs() {
-//   for (let i = 0; i < tripDetails.imgs.length; i++) {
-//     return /*html*/`
-//     <div class="swiper-slide mx-auto w-100">
-//       <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
-//         <img class="w-100" src="./img/inside-trip-imgs/${tripDetails.imgs[i]}" alt="">
-//       </div>
-//     </div>
-//     `
-//   }
-// }

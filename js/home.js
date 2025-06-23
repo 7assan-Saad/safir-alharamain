@@ -5,7 +5,7 @@
 // const getTripsByCategory = (async () => {
 //   let trips = []
 //   let tripsSlice
-//   await db.collection('trips').where('category', '==', 'new-umrah').get()
+//   await db.collection('trips').where('category', '==', 'umrah').get()
 //   .then(category => {
 //     category.forEach(cat => {
 //       let obj = cat.data()
@@ -82,7 +82,8 @@ const latestTravelPro = document.querySelector('.travel-latest')
 const latestTravelTrips = (async () => {
   let trips = []
   let tripsSlice
-  await db.collection('trips').where('category', '==', 'insideTrip').get()
+  await db.collection('trips').where('category', '==', 'insideTrip')
+  .where('status', '==', 'new').get()
   .then(category => {
     category.forEach(cat => {
       let obj = cat.data()

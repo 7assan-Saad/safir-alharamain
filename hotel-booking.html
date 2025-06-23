@@ -166,10 +166,10 @@
             <a class="questions nav-link max-content" aria-current="page" href="questions.html">الأسئلة الشائعة</a>
           </li>
 
-          <span class="contact-us text-white btn-secondary rounded-5 px-5 max-content cursor-pointer"
-            style="padding-top: 14px; padding-bottom: 9px;" aria-current="page" onclick="scrollToDown()">
+          <a class="contact-us text-white btn-secondary rounded-5 px-5 max-content cursor-pointer"
+            style="padding-top: 14px; padding-bottom: 9px;" aria-current="page" href="#footer">
             تواصل معنا
-          </span>
+          </a>
 
         </ul>
 
@@ -454,7 +454,7 @@
   <!-- end join-us -->
 
   <!-- start footer -->
-  <footer class="section">
+  <footer class="section" id="footer">
     <div class="container">
       <div class="container">
         <div class="row">
@@ -592,9 +592,22 @@
     </div>
   </footer>
 
-  <div class="copyrights d-flex align-items-center justify-content-center text-light text-regular py-4 bg-primary">
-    <p class="mt-1 me-1 mb-0">جميع الحقوق محفوظة | سفــير الحرمــين</p>
-    <p class="mb-0" style="font-family: 'arial';">&copy; 2024</p>
+  <div class="copyrights text-light text-regular py-4 bg-primary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-12 row-cols-lg-2 text-center">
+        <div class="col right d-flex align-items-center justify-content-center">
+          <p class="my-0" style="padding-top: 4px;">جميع الحقوق محفوظة | سفــير الحرمــين</p>
+          <p class="mb-0 ms-1" style="font-family: 'arial';">&copy; 2025</p>
+        </div>
+        <div class="col">
+          <p class="my-2 mb-0 left">تم التطوير بواسطة م.
+            <a href="https://wa.me/+201060344718" target="_blank" class="text-bold text-white">
+              حســن سعـــد
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- end footer -->
 
@@ -619,7 +632,6 @@
   <script src="./js/goToDetails.js" defer></script>
   <script>
     function scrollToUp() { scrollTo(0, 0) }
-    function scrollToDown() { scrollTo(0, document.body.offsetHeight) }
   </script>
 </body>
 

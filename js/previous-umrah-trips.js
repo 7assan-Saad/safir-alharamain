@@ -4,7 +4,8 @@ const umrahTripsContainer = document.querySelector('.umrah-trip')
 
 const getTripsByCategory = (async () => {
   let trips = []
-  await db.collection('trips').where('category', '==', 'umrah').get()
+  await db.collection('trips').where('category', '==', 'umrah')
+  .where('status', '==', 'old').get()
   .then(category => {
     category.forEach(cat => {
       let obj = cat.data()

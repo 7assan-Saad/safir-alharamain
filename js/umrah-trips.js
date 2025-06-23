@@ -5,8 +5,8 @@ const umrahTripsContainer = document.querySelector('.new-umrah-trip')
 const getTripsByCategory = (async () => {
   let trips = []
   await db.collection('trips')
-  .where('category', '==', 'new-umrah')
-  .where('level', '==', 'اقتصادي').get()
+  .where('category', '==', 'umrah')
+  .where('status', '==', 'new').get()
   .then(category => {
     category.forEach(cat => {
       let obj = cat.data()
@@ -15,7 +15,7 @@ const getTripsByCategory = (async () => {
     })
     // Sort the trips array by 'quadruplePrice' from lowest to highest
     trips.sort((a, b) => a.sort - b.sort)
-    console.log(trips)
+    // console.log(trips)
   })
   let renderUmrahTrips = trips.map(product => {
     return /*html*/`
