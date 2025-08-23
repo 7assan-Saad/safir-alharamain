@@ -767,7 +767,7 @@ input, select {
   position: relative;
   width: 100%;
   min-height: 800px;
-  background: var(--secondary) url('../img/bakg-umrah-2.jpg') no-repeat bottom center/cover;
+  background: var(--secondary) url('../img/kaaba-1.jpg') no-repeat bottom center/cover;
   color: var(--white);
 }
 
