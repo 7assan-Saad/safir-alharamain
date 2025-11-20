@@ -4,8 +4,8 @@ const detailsContainer = document.querySelector('.details-container')
 let tripDetails
 
 // Get a single document
-( async function getSingleDoc() {
-  
+(async function getSingleDoc() {
+
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get('id');
   await db.collection('trips').doc(`${productId}`).get()
@@ -16,7 +16,7 @@ let tripDetails
         // console.log(tripDetails.category)
       }
     })
-  
+
   // umrah & hajj details
   if (tripDetails.category == 'umrah') {
     detailsContainer.innerHTML = /*html*/`
@@ -45,14 +45,13 @@ let tripDetails
                 <td class="table-row">تاريخ الرحلة</td>
                 <td class="table-row">${tripDetails.tripDate}</td>
               </tr>
-              ${
-                tripDetails.returnDate != "" ? /*html*/`
+              ${tripDetails.returnDate != "" ? /*html*/`
                   <tr>
                     <td class="table-row">تاريخ العودة</td>
                     <td class="table-row">${tripDetails.returnDate}</td>
                   </tr>
                   ` : ''
-              }
+      }
               <tr>
                 <td class="table-row">مسار الرحلة</td>
                 <td class="table-row">${tripDetails.itinerary}</td>
@@ -69,50 +68,52 @@ let tripDetails
                 <td class="table-row">فندق مكة</td>
                 <td class="table-row">${tripDetails.MakaHotel}</td>
               </tr>
-              ${
-                tripDetails.MadinaHotel != "" ? /*html*/`
+              ${tripDetails.MadinaHotel != "" ? /*html*/`
                     <tr>
                       <td class="table-row">فندق المدينة</td>
                       <td class="table-row">${tripDetails.MadinaHotel}</td>
                     </tr>
                   ` : ''
-              }
+      }
+              ${tripDetails.fivePrice != "" ? /*html*/`
+                    <tr>
+                      <td class="table-row">سعر الخماسي</td>
+                      <td class="table-row">${tripDetails.fivePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+                    </tr>
+                  ` : ''
+      }
               <tr>
                 <td class="table-row">سعر الرباعي</td>
                 <td class="table-row">${tripDetails.quadruplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
               </tr>
-              ${
-                tripDetails.triplePrice != "" ? /*html*/`
+              ${tripDetails.triplePrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الثلاثي</td>
                       <td class="table-row">${tripDetails.triplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
                     </tr>
                   ` : ''
-              }
-              ${
-                tripDetails.binaryPrice != "" ? /*html*/`
+      }
+              ${tripDetails.binaryPrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الثنائي</td>
                       <td class="table-row">${tripDetails.binaryPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
                     </tr>
                   ` : ''
-              }
-              ${
-                tripDetails.infantPrice != "" ? /*html*/`
+      }
+              ${tripDetails.infantPrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الرضيع</td>
                       <td class="table-row">${tripDetails.infantPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
                     </tr>
                   ` : ''
-              }
-              ${
-                tripDetails.childPrice != "" ? /*html*/`
+      }
+              ${tripDetails.childPrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الطفل</td>
                       <td class="table-row">${tripDetails.childPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
                     </tr>
                   ` : ''
-              }
+      }
               <tr>
                 <td class="table-row">شركة السياحة</td>
                 <td class="table-row">${tripDetails.company.companyName}</td>
@@ -132,28 +133,25 @@ let tripDetails
         <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
           <h3 class="fs-5">البرنامج يشمل:</h3>
           <ul class="mt-3">
-              ${
-                tripDetails.programIncludes.map( pro => {
-                  return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
-                }).join('')
-              }
+              ${tripDetails.programIncludes.map(pro => {
+        return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
+      }).join('')
+      }
           </ul>
         </div>
 
-        ${
-          tripDetails.notes != '' ? /*html*/`
+        ${tripDetails.notes != '' ? /*html*/`
             <div class="trip-notes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
               <h3 class="fs-5">ملاحظات:</h3>
               <ul class="mt-3">
-                  ${
-                    tripDetails.notes.map( note => {
-                      return /*html*/`<li class="pro-item lh-lg">${note}</li>`
-                    }).join('')
-                  }
+                  ${tripDetails.notes.map(note => {
+        return /*html*/`<li class="pro-item lh-lg">${note}</li>`
+      }).join('')
+        }
               </ul>
             </div>
           ` : ''
-        }
+      }
   
         <div class="required-doc mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
           <h3 class="fs-5">الأوراق والمستندات المطلوبة:</h3>
@@ -377,11 +375,11 @@ let tripDetails
       <!-- end booking form -->
   
     `
-      let bookFile = document.createElement('script');
-      bookFile.src = './js/umrah-booking.js';
-      document.head.appendChild(bookFile);
+    let bookFile = document.createElement('script');
+    bookFile.src = './js/umrah-booking.js';
+    document.head.appendChild(bookFile);
   }
-  
+
   // inside trip details
   if (tripDetails.category == 'insideTrip') {
     console.log(tripDetails.imgs.length)
@@ -389,8 +387,7 @@ let tripDetails
         <div class="container mx-auto px-3" style="max-width: 1000px;">
   
           <h1 class="fs-2 text-center mb-2" style="margin-top: 10rem;">${tripDetails.tripTitle}</h1>
-          ${
-            tripDetails.imgs.length > 1 ? /*html*/`
+          ${tripDetails.imgs.length > 1 ? /*html*/`
               <!-- start swiper -->
               <div class="details-carousel swiper">
                 <div class="slider-wrapper">
@@ -398,19 +395,17 @@ let tripDetails
       
                     <!-- Slides Items -->
       
-                    ${
-
-                      tripDetails.imgs.map( img => {
-                        return /*html*/`
+                    ${tripDetails.imgs.map(img => {
+      return /*html*/`
                         <div class="swiper-slide mb-3">
                           <div class="details-imgs rounded-5 overflow-hidden" style="max-height: 500px;">
                             <img class="w-100" src="./img/inside-trip-imgs/${img}" alt="">
                           </div>
                         </div>
                       `
-                      }).join('')
-          
-                    }
+    }).join('')
+
+        }
 
                   </div>
       
@@ -431,7 +426,7 @@ let tripDetails
                     <img class="w-100" src="./img/inside-trip-imgs/${tripDetails.imgs}" alt="">
                   </div>
               `
-          }
+      }
 
 
           <p class="fs-6 text-center lh-lg mt-4">${tripDetails.description}</p>
@@ -445,71 +440,63 @@ let tripDetails
                   <td class="table-row">${tripDetails.tripTitle}</td>
                 </tr>
 
-                ${
-                  tripDetails.flightDuration != "" ? /*html*/`
+                ${tripDetails.flightDuration != "" ? /*html*/`
                     <tr>
                       <td class="table-row">مدة الرحلة</td>
                       <td class="table-row">${tripDetails.flightDuration}</td>
                     </tr>
                     ` : ''
-                }
-                ${
-                  tripDetails.tripDate != "" ? /*html*/`
+      }
+                ${tripDetails.tripDate != "" ? /*html*/`
                     <tr>
                       <td class="table-row">تاريخ الرحلة</td>
                       <td class="table-row">${tripDetails.tripDate}</td>
                     </tr>
                     ` : ''
-                }
-                ${
-                  tripDetails.returnDate != "" ? /*html*/`
+      }
+                ${tripDetails.returnDate != "" ? /*html*/`
                     <tr>
                       <td class="table-row">تاريخ العودة</td>
                       <td class="table-row">${tripDetails.returnDate}</td>
                     </tr>
                     ` : ''
-                }
-                ${
-                  tripDetails.itinerary != "" ? /*html*/`
+      }
+                ${tripDetails.itinerary != "" ? /*html*/`
                     <tr>
                       <td class="table-row">مسار الرحلة</td>
                       <td class="table-row">${tripDetails.itinerary}</td>
                     </tr>
                     ` : ''
-                }
-                ${
-                  tripDetails.tripTransfer != "" ? /*html*/`
+      }
+                ${tripDetails.tripTransfer != "" ? /*html*/`
                     <tr>
                       <td class="table-row">وسيلة النقل</td>
                       <td class="table-row">${tripDetails.tripTransfer}</td>
                     </tr>
                     ` : ''
-                }
-                ${
-                  tripDetails.tripPrice != "" ? /*html*/`
+      }
+                ${tripDetails.tripPrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الرحلة</td>
                       <td class="table-row">${tripDetails.tripPrice}</td>
                       <!-- <span class="ms-1 text-regular">جنيه</span> -->
                     </tr>
                     ` : ''
-                }
-                ${
-                  tripDetails.childPrice != "" ? /*html*/`
+      }
+                ${tripDetails.childPrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الطفل</td>
                       <td class="table-row">${tripDetails.childPrice}</td>
                     </tr>
                     ` : ''
-                }
-                ${
-                  tripDetails.company.companyName != "" ? /*html*/`
+      }
+                ${tripDetails.company.companyName != "" ? /*html*/`
                     <tr>
                       <td class="table-row">شركة السياحة</td>
                       <td class="table-row">${tripDetails.company.companyName}</td>
                     </tr>
                     ` : ''
-                }
+      }
               </tbody>
             </table>
           </div>
@@ -517,42 +504,37 @@ let tripDetails
           <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
             <h3 class="fs-5">المميزات:</h3>
             <ul class="mt-3">
-                ${
-                  tripDetails.tripFeatures.map( pro => {
-                    return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
-                  }).join('')
-                }
+                ${tripDetails.tripFeatures.map(pro => {
+        return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
+      }).join('')
+      }
             </ul>
           </div>
   
-          ${
-            tripDetails.tripIncludes.length != 0 ? /*html*/`
+          ${tripDetails.tripIncludes.length != 0 ? /*html*/`
               <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
                 <h3 class="fs-5">الرحلة تشمل:</h3>
                 <ul class="mt-3">
-                    ${
-                      tripDetails.tripIncludes.map( pro => {
-                        return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
-                      }).join('')
-                    }
+                    ${tripDetails.tripIncludes.map(pro => {
+        return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
+      }).join('')
+        }
                 </ul>
               </div>
             ` : ''
-          }
+      }
   
           <div class="trip-notes mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
-            ${
-              tripDetails.notes.length != 0 ? /*html*/`
+            ${tripDetails.notes.length != 0 ? /*html*/`
                 <h3 class="fs-5">ملاحظات:</h3>
                 <ul class="mt-3">
-                    ${
-                      tripDetails.notes.map( note => {
-                        return /*html*/`<li class="pro-item lh-lg">${note}</li>`
-                      }).join('')
-                    }
+                    ${tripDetails.notes.map(note => {
+        return /*html*/`<li class="pro-item lh-lg">${note}</li>`
+      }).join('')
+        }
                 </ul>
               ` : ''
-            }
+      }
             
             <p class="text-bold text-secondary lh-lg my-4">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>  
           </div>
@@ -772,7 +754,7 @@ let tripDetails
     let bookFile = document.createElement('script');
     bookFile.src = './js/travel-booking.js';
     document.head.appendChild(bookFile);
-  
+
   }
-  
+
 })()
