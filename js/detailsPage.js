@@ -75,17 +75,17 @@ let tripDetails
                     </tr>
                   ` : ''
       }
-              ${tripDetails.fivePrice != "" ? /*html*/`
+              ${tripDetails.fivePrice != "" && tripDetails.fivePrice != undefined ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الخماسي</td>
                       <td class="table-row">${tripDetails.fivePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
                     </tr>
                   ` : ''
       }
-              <tr>
-                <td class="table-row">سعر الرباعي</td>
-                <td class="table-row">${tripDetails.quadruplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-              </tr>
+  <tr>
+    <td class="table-row">سعر الرباعي</td>
+    <td class="table-row">${tripDetails.quadruplePrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+  </tr>
               ${tripDetails.triplePrice != "" ? /*html*/`
                     <tr>
                       <td class="table-row">سعر الثلاثي</td>
@@ -114,31 +114,31 @@ let tripDetails
                     </tr>
                   ` : ''
       }
-              <tr>
-                <td class="table-row">شركة السياحة</td>
-                <td class="table-row">${tripDetails.company.companyName}</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="childs">
-            <p class="lh-lg mb-2">
-              * الرضيع : من يوم إلى 2 سنة، والإقامة مع ذويهم بالغرفة بدون سرير إضافى.
-            </p>
-            <p class="lh-lg mb-0">
-              * الطفل : من 2 سنة الى 12 سنة، والإقامة مع ذويهم بالغرفة بدون سرير إضافى وله مقعد في الأتوبيس.
-            </p>
-          </div>
-        </div>
-  
-        <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
-          <h3 class="fs-5">البرنامج يشمل:</h3>
-          <ul class="mt-3">
-              ${tripDetails.programIncludes.map(pro => {
+  <tr>
+    <td class="table-row">شركة السياحة</td>
+    <td class="table-row">${tripDetails.company.companyName}</td>
+  </tr>
+            </tbody >
+          </table >
+    <div class="childs">
+      <p class="lh-lg mb-2">
+        * الرضيع : من يوم إلى 2 سنة، والإقامة مع ذويهم بالغرفة بدون سرير إضافى.
+      </p>
+      <p class="lh-lg mb-0">
+        * الطفل : من 2 سنة الى 12 سنة، والإقامة مع ذويهم بالغرفة بدون سرير إضافى وله مقعد في الأتوبيس.
+      </p>
+    </div>
+        </div >
+
+    <div class="program-includes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
+      <h3 class="fs-5">البرنامج يشمل:</h3>
+      <ul class="mt-3">
+        ${tripDetails.programIncludes.map(pro => {
         return /*html*/`<li class="pro-item lh-lg">${pro}</li>`
       }).join('')
       }
-          </ul>
-        </div>
+      </ul>
+    </div>
 
         ${tripDetails.notes != '' ? /*html*/`
             <div class="trip-notes mt-5 mb-3 mx-auto px-2" style="max-width: 900px;">
@@ -152,21 +152,21 @@ let tripDetails
             </div>
           ` : ''
       }
-  
-        <div class="required-doc mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
-          <h3 class="fs-5">الأوراق والمستندات المطلوبة:</h3>
-          <ul class="mt-3">
-            <li class="pro-item lh-lg">جواز سفر صالح لمدة لا تقل عن عام على الأقل.</li>
-            <li class="pro-item lh-lg">شهادة صحية خاصة بالحج والعمرة.</li>
-            <li class="pro-item lh-lg">عدد ( 1 ) صور شخصية خلفية بيضاء.</li>
-            <li class="pro-item lh-lg">استخراج تصريح سفر لمن هم في سن التجنيد.</li>
-          </ul>
-          <p class="mt-5">*تطبق الشروط والأحكام.</p>
-          <p class="text-bold text-secondary lh-lg mt-3">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>
-        </div>
-      </div>
+
+  <div class="required-doc mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
+    <h3 class="fs-5">الأوراق والمستندات المطلوبة:</h3>
+    <ul class="mt-3">
+      <li class="pro-item lh-lg">جواز سفر صالح لمدة لا تقل عن عام على الأقل.</li>
+      <li class="pro-item lh-lg">شهادة صحية خاصة بالحج والعمرة.</li>
+      <li class="pro-item lh-lg">عدد ( 1 ) صور شخصية خلفية بيضاء.</li>
+      <li class="pro-item lh-lg">استخراج تصريح سفر لمن هم في سن التجنيد.</li>
+    </ul>
+    <p class="mt-5">*تطبق الشروط والأحكام.</p>
+    <p class="text-bold text-secondary lh-lg mt-3">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>
+  </div>
+      </div >
       
-      <!-- start booking form -->
+      < !--start booking form-- >
       <section class="section bg-secondary">
         <div class="container">
           <div class="booking-form bg-white rounded-5 shadow p-5 mx-auto" style="max-width: 900px;">
@@ -372,8 +372,8 @@ let tripDetails
           </div>
         </div>
       </section>
-      <!-- end booking form -->
-  
+      <!--end booking form-- >
+
     `
     let bookFile = document.createElement('script');
     bookFile.src = './js/umrah-booking.js';
@@ -384,9 +384,9 @@ let tripDetails
   if (tripDetails.category == 'insideTrip') {
     console.log(tripDetails.imgs.length)
     detailsContainer.innerHTML = /*html*/`
-        <div class="container mx-auto px-3" style="max-width: 1000px;">
-  
-          <h1 class="fs-2 text-center mb-2" style="margin-top: 10rem;">${tripDetails.tripTitle}</h1>
+    < div class="container mx-auto px-3" style = "max-width: 1000px;" >
+
+      <h1 class="fs-2 text-center mb-2" style="margin-top: 10rem;">${tripDetails.tripTitle}</h1>
           ${tripDetails.imgs.length > 1 ? /*html*/`
               <!-- start swiper -->
               <div class="details-carousel swiper">
@@ -523,9 +523,9 @@ let tripDetails
               </div>
             ` : ''
       }
-  
-          <div class="trip-notes mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
-            ${tripDetails.notes.length != 0 ? /*html*/`
+
+  <div class="trip-notes mt-5 mb-5 mx-auto px-2" style="max-width: 900px;">
+    ${tripDetails.notes.length != 0 ? /*html*/`
                 <h3 class="fs-5">ملاحظات:</h3>
                 <ul class="mt-3">
                     ${tripDetails.notes.map(note => {
@@ -535,12 +535,12 @@ let tripDetails
                 </ul>
               ` : ''
       }
-            
-            <p class="text-bold text-secondary lh-lg my-4">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>  
-          </div>
-        </div>
+
+    <p class="text-bold text-secondary lh-lg my-4">للمزيد من التفاصيل يرجى التواصل معنا لنتمكن من خدمتكم بشكل أفضل.</p>
+  </div>
+        </div >
       
-        <!-- start booking form -->
+        < !--start booking form-- >
         <section class="section bg-secondary">
           <div class="container">
             <div class="booking-form bg-white rounded-5 shadow p-5 mx-auto" style="max-width: 900px;">
@@ -749,7 +749,7 @@ let tripDetails
             </div>
           </div>
         </section>
-        <!-- end booking form -->
+        <!--end booking form-- >
     `
     let bookFile = document.createElement('script');
     bookFile.src = './js/travel-booking.js';
