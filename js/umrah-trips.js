@@ -12,7 +12,7 @@ const getTripsByCategory = (async () => {
       obj.id = `${cat.id}`
       trips.push(obj)
     })
-    // Sort the trips array by 'quadruplePrice' from lowest to highest
+    // Sort the trips array by 'sort' from small to large
     trips.sort((a, b) => a.sort - b.sort)
   })
   let renderUmrahTrips = trips.map(product => {

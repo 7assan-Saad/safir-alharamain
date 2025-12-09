@@ -286,8 +286,9 @@ input, select {
   transition: .3s all ease-in-out;
 }
 
-.btn-primary:hover {
-  background-color: var(--primary-hover);
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: var(--primary-hover) !important;
 }
 
 /* end buttons */
@@ -303,7 +304,7 @@ input, select {
     width: 130px;
   }
   .btn-primary {
-    width: 96% !important;
+    width: 100% !important;
   }
 }
 
@@ -1357,6 +1358,12 @@ input, select {
   margin-left: 70px;
   margin-bottom: 40px;
   background-color: var(--light-secondary);
+}
+
+@media (min-width: 576px ) {
+  .details-imgs {
+    width: 75% !important;
+  }
 }
 
 table > * td:first-child {
