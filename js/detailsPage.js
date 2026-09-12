@@ -41,12 +41,12 @@ let tripDetails
                 <td class="table-row">${tripDetails.level}</td>
               </tr>
               <tr>
-                <td class="table-row">مدة الرحلة</td>
-                <td class="table-row">${tripDetails.flightDuration}</td>
-              </tr>
-              <tr>
                 <td class="table-row">تاريخ الرحلة</td>
                 <td class="table-row">${tripDetails.tripDate}</td>
+              </tr>
+              <tr>
+                <td class="table-row">مدة الرحلة</td>
+                <td class="table-row">${tripDetails.flightDuration}</td>
               </tr>
               ${tripDetails.returnDate != "" && tripDetails.returnDate != undefined ? /*html*/`
                 <tr>
@@ -59,10 +59,7 @@ let tripDetails
                 <td class="table-row">مسار الرحلة</td>
                 <td class="table-row">${tripDetails.itinerary}</td>
               </tr>
-              <!-- <tr>
-                <td class="table-row">وسيلة السفر</td>
-                <td class="table-row">${tripDetails.tripTransfer}</td>
-              </tr> -->
+
               <tr>
                 <td class="table-row">شركة الطيران</td>
                 <td class="table-row">${tripDetails.airline}</td>
@@ -109,13 +106,6 @@ let tripDetails
                 </tr>
               ` : ''
               }
-              ${tripDetails.infantPrice != "" && tripDetails.infantPrice != undefined ? /*html*/`
-                <tr>
-                  <td class="table-row">سعر الرضيع</td>
-                  <td class="table-row">${tripDetails.infantPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
-                </tr>
-              ` : ''
-              }
               ${tripDetails.childPrice != "" && tripDetails.childPrice != undefined ? /*html*/`
                 <tr>
                   <td class="table-row">سعر الطفل</td>
@@ -123,10 +113,21 @@ let tripDetails
                 </tr>
               ` : ''
               }
-              <tr>
-                <td class="table-row">شركة السياحة</td>
-                <td class="table-row">${tripDetails.company.companyName}</td>
-              </tr>
+              ${tripDetails.infantPrice != "" && tripDetails.infantPrice != undefined ? /*html*/`
+                <tr>
+                  <td class="table-row">سعر الرضيع</td>
+                  <td class="table-row">${tripDetails.infantPrice}<span class="ms-1 text-regular">جنيه مصري</span></td>
+                </tr>
+              ` : ''
+              }
+              ${tripDetails.company.companyName != "" && tripDetails.company.companyName != undefined ? /*html*/`
+                <tr>
+                  <td class="table-row">شركة السياحة</td>
+                  <td class="table-row">${tripDetails.company.companyName}</td>
+                </tr>
+              ` : ''
+              }
+ 
             </tbody>
           </table >
         </div>
@@ -216,7 +217,9 @@ let tripDetails
               <div class="row mb-3">
                 <div class="col">
                   <label class="text-gray mb-1" for="trip-name">الرحلـة</label>
-                  <div class="dropdown">
+                  <input type="text" name="trip-name" id="trip-name" class="form-control form-control-lg rounded-4">
+
+                  <!-- <div class="dropdown">
                     <button class="select text-start btn bg-white border rounded-4 w-100 dropdown-toggle" name="trip-name"
                       id="trip-name" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       *حدد الرحلة
@@ -234,7 +237,7 @@ let tripDetails
                       <li class="dropdown-item">رحلة عمرة شعبـان رمضـان</li>
                       <li class="dropdown-item">رحلة عمرة رمضــان</li>
                     </ul>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="col">
                   <label class="text-gray mb-1 mb-1">تاريخ الرحلـة</label>

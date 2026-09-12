@@ -76,7 +76,7 @@ sendButton.addEventListener("click", () => {
   الموبايل : ${phone.value}%0a
   العنوان : ${address.value}%0a
   المحافظة : ${governorate.value}%0a
-  الرحلة : ${tripName.textContent.trim()}%0a
+  الرحلة : ${tripName.value}%0a
   تاريخ الرحلة : ${date()}%0a
   عدد الأفراد (الكبار) : ${adultsCount.value}%0a
   عدد الأفراد (الصغار) : ${childrenCount.value}%0a
@@ -99,7 +99,7 @@ cencelButton.addEventListener("click", () => {
   day.value = ''
   month.value = ''
   year.value = currentYear
-  tripName.textContent = '*حدد الرحلة'
+  tripName.value = ''
   adultsCount.value = ''
   childrenCount.value = ''
   msg.value = ''
